@@ -1,0 +1,587 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4ED36C192BD36C9E00791861 /* HappyBookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C182BD36C9E00791861 /* HappyBookApp.swift */; };
+		4ED36C1B2BD36C9E00791861 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C1A2BD36C9E00791861 /* ContentView.swift */; };
+		4ED36C1D2BD36C9F00791861 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ED36C1C2BD36C9F00791861 /* Assets.xcassets */; };
+		4ED36C202BD36C9F00791861 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ED36C1F2BD36C9F00791861 /* Preview Assets.xcassets */; };
+		4ED36C2A2BD36CA000791861 /* HappyBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C292BD36CA000791861 /* HappyBookTests.swift */; };
+		4ED36C342BD36CA000791861 /* HappyBookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C332BD36CA000791861 /* HappyBookUITests.swift */; };
+		4ED36C362BD36CA000791861 /* HappyBookUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C352BD36CA000791861 /* HappyBookUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4ED36C262BD36CA000791861 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4ED36C0D2BD36C9E00791861 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4ED36C142BD36C9E00791861;
+			remoteInfo = HappyBook;
+		};
+		4ED36C302BD36CA000791861 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4ED36C0D2BD36C9E00791861 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4ED36C142BD36C9E00791861;
+			remoteInfo = HappyBook;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4ED36C152BD36C9E00791861 /* HappyBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HappyBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4ED36C182BD36C9E00791861 /* HappyBookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappyBookApp.swift; sourceTree = "<group>"; };
+		4ED36C1A2BD36C9E00791861 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4ED36C1C2BD36C9F00791861 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4ED36C1F2BD36C9F00791861 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4ED36C252BD36CA000791861 /* HappyBookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HappyBookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4ED36C292BD36CA000791861 /* HappyBookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappyBookTests.swift; sourceTree = "<group>"; };
+		4ED36C2F2BD36CA000791861 /* HappyBookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HappyBookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4ED36C332BD36CA000791861 /* HappyBookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappyBookUITests.swift; sourceTree = "<group>"; };
+		4ED36C352BD36CA000791861 /* HappyBookUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappyBookUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4ED36C122BD36C9E00791861 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ED36C222BD36CA000791861 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ED36C2C2BD36CA000791861 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4ED36C0C2BD36C9E00791861 = {
+			isa = PBXGroup;
+			children = (
+				4ED36C172BD36C9E00791861 /* HappyBook */,
+				4ED36C282BD36CA000791861 /* HappyBookTests */,
+				4ED36C322BD36CA000791861 /* HappyBookUITests */,
+				4ED36C162BD36C9E00791861 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4ED36C162BD36C9E00791861 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4ED36C152BD36C9E00791861 /* HappyBook.app */,
+				4ED36C252BD36CA000791861 /* HappyBookTests.xctest */,
+				4ED36C2F2BD36CA000791861 /* HappyBookUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4ED36C172BD36C9E00791861 /* HappyBook */ = {
+			isa = PBXGroup;
+			children = (
+				4ED36C182BD36C9E00791861 /* HappyBookApp.swift */,
+				4ED36C1A2BD36C9E00791861 /* ContentView.swift */,
+				4ED36C1C2BD36C9F00791861 /* Assets.xcassets */,
+				4ED36C1E2BD36C9F00791861 /* Preview Content */,
+			);
+			path = HappyBook;
+			sourceTree = "<group>";
+		};
+		4ED36C1E2BD36C9F00791861 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4ED36C1F2BD36C9F00791861 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4ED36C282BD36CA000791861 /* HappyBookTests */ = {
+			isa = PBXGroup;
+			children = (
+				4ED36C292BD36CA000791861 /* HappyBookTests.swift */,
+			);
+			path = HappyBookTests;
+			sourceTree = "<group>";
+		};
+		4ED36C322BD36CA000791861 /* HappyBookUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4ED36C332BD36CA000791861 /* HappyBookUITests.swift */,
+				4ED36C352BD36CA000791861 /* HappyBookUITestsLaunchTests.swift */,
+			);
+			path = HappyBookUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4ED36C142BD36C9E00791861 /* HappyBook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4ED36C392BD36CA000791861 /* Build configuration list for PBXNativeTarget "HappyBook" */;
+			buildPhases = (
+				4ED36C112BD36C9E00791861 /* Sources */,
+				4ED36C122BD36C9E00791861 /* Frameworks */,
+				4ED36C132BD36C9E00791861 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HappyBook;
+			productName = HappyBook;
+			productReference = 4ED36C152BD36C9E00791861 /* HappyBook.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4ED36C242BD36CA000791861 /* HappyBookTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4ED36C3C2BD36CA000791861 /* Build configuration list for PBXNativeTarget "HappyBookTests" */;
+			buildPhases = (
+				4ED36C212BD36CA000791861 /* Sources */,
+				4ED36C222BD36CA000791861 /* Frameworks */,
+				4ED36C232BD36CA000791861 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4ED36C272BD36CA000791861 /* PBXTargetDependency */,
+			);
+			name = HappyBookTests;
+			productName = HappyBookTests;
+			productReference = 4ED36C252BD36CA000791861 /* HappyBookTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4ED36C2E2BD36CA000791861 /* HappyBookUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4ED36C3F2BD36CA000791861 /* Build configuration list for PBXNativeTarget "HappyBookUITests" */;
+			buildPhases = (
+				4ED36C2B2BD36CA000791861 /* Sources */,
+				4ED36C2C2BD36CA000791861 /* Frameworks */,
+				4ED36C2D2BD36CA000791861 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4ED36C312BD36CA000791861 /* PBXTargetDependency */,
+			);
+			name = HappyBookUITests;
+			productName = HappyBookUITests;
+			productReference = 4ED36C2F2BD36CA000791861 /* HappyBookUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4ED36C0D2BD36C9E00791861 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					4ED36C142BD36C9E00791861 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					4ED36C242BD36CA000791861 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 4ED36C142BD36C9E00791861;
+					};
+					4ED36C2E2BD36CA000791861 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 4ED36C142BD36C9E00791861;
+					};
+				};
+			};
+			buildConfigurationList = 4ED36C102BD36C9E00791861 /* Build configuration list for PBXProject "HappyBook" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4ED36C0C2BD36C9E00791861;
+			productRefGroup = 4ED36C162BD36C9E00791861 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4ED36C142BD36C9E00791861 /* HappyBook */,
+				4ED36C242BD36CA000791861 /* HappyBookTests */,
+				4ED36C2E2BD36CA000791861 /* HappyBookUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4ED36C132BD36C9E00791861 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4ED36C202BD36C9F00791861 /* Preview Assets.xcassets in Resources */,
+				4ED36C1D2BD36C9F00791861 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ED36C232BD36CA000791861 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ED36C2D2BD36CA000791861 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4ED36C112BD36C9E00791861 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4ED36C1B2BD36C9E00791861 /* ContentView.swift in Sources */,
+				4ED36C192BD36C9E00791861 /* HappyBookApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ED36C212BD36CA000791861 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4ED36C2A2BD36CA000791861 /* HappyBookTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ED36C2B2BD36CA000791861 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4ED36C362BD36CA000791861 /* HappyBookUITestsLaunchTests.swift in Sources */,
+				4ED36C342BD36CA000791861 /* HappyBookUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4ED36C272BD36CA000791861 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4ED36C142BD36C9E00791861 /* HappyBook */;
+			targetProxy = 4ED36C262BD36CA000791861 /* PBXContainerItemProxy */;
+		};
+		4ED36C312BD36CA000791861 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4ED36C142BD36C9E00791861 /* HappyBook */;
+			targetProxy = 4ED36C302BD36CA000791861 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		4ED36C372BD36CA000791861 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4ED36C382BD36CA000791861 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4ED36C3A2BD36CA000791861 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HappyBook/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.woghks131.HappyBook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4ED36C3B2BD36CA000791861 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HappyBook/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.woghks131.HappyBook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4ED36C3D2BD36CA000791861 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.woghks131.HappyBookTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HappyBook.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HappyBook";
+			};
+			name = Debug;
+		};
+		4ED36C3E2BD36CA000791861 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.woghks131.HappyBookTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HappyBook.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HappyBook";
+			};
+			name = Release;
+		};
+		4ED36C402BD36CA000791861 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.woghks131.HappyBookUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HappyBook;
+			};
+			name = Debug;
+		};
+		4ED36C412BD36CA000791861 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.woghks131.HappyBookUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HappyBook;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4ED36C102BD36C9E00791861 /* Build configuration list for PBXProject "HappyBook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4ED36C372BD36CA000791861 /* Debug */,
+				4ED36C382BD36CA000791861 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4ED36C392BD36CA000791861 /* Build configuration list for PBXNativeTarget "HappyBook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4ED36C3A2BD36CA000791861 /* Debug */,
+				4ED36C3B2BD36CA000791861 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4ED36C3C2BD36CA000791861 /* Build configuration list for PBXNativeTarget "HappyBookTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4ED36C3D2BD36CA000791861 /* Debug */,
+				4ED36C3E2BD36CA000791861 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4ED36C3F2BD36CA000791861 /* Build configuration list for PBXNativeTarget "HappyBookUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4ED36C402BD36CA000791861 /* Debug */,
+				4ED36C412BD36CA000791861 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4ED36C0D2BD36C9E00791861 /* Project object */;
+}
