@@ -8,12 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		4ED36C192BD36C9E00791861 /* HappyBookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C182BD36C9E00791861 /* HappyBookApp.swift */; };
-		4ED36C1B2BD36C9E00791861 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C1A2BD36C9E00791861 /* ContentView.swift */; };
 		4ED36C1D2BD36C9F00791861 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ED36C1C2BD36C9F00791861 /* Assets.xcassets */; };
 		4ED36C202BD36C9F00791861 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ED36C1F2BD36C9F00791861 /* Preview Assets.xcassets */; };
 		4ED36C2A2BD36CA000791861 /* HappyBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C292BD36CA000791861 /* HappyBookTests.swift */; };
 		4ED36C342BD36CA000791861 /* HappyBookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C332BD36CA000791861 /* HappyBookUITests.swift */; };
 		4ED36C362BD36CA000791861 /* HappyBookUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C352BD36CA000791861 /* HappyBookUITestsLaunchTests.swift */; };
+		4ED36C4A2BD37FF700791861 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C492BD37FF700791861 /* ColorExtension.swift */; };
+		4ED36C4F2BD3869500791861 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C4E2BD3869500791861 /* LoginView.swift */; };
+		4ED36C512BD386D100791861 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C502BD386D100791861 /* MainTabView.swift */; };
+		4ED36C5B2BD3925500791861 /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 4ED36C5A2BD3925500791861 /* KakaoSDK */; };
+		4ED36C5D2BD3963700791861 /* KakaoSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C5C2BD3963700791861 /* KakaoSignInButton.swift */; };
+		4ED36C5F2BD41E9A00791861 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C5E2BD41E9A00791861 /* AccountView.swift */; };
+		4ED36C612BD41EA400791861 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C602BD41EA400791861 /* StatisticsView.swift */; };
+		4ED36C632BD41EB000791861 /* AssetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C622BD41EB000791861 /* AssetView.swift */; };
+		4ED36C652BD41EB600791861 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C642BD41EB600791861 /* MoreView.swift */; };
+		4ED36C682BD41FF200791861 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C672BD41FF200791861 /* Symbol.swift */; };
+		4ED36C6A2BD4E91900791861 /* AccountRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C692BD4E91900791861 /* AccountRow.swift */; };
+		4ED36C6F2BD530C200791861 /* CalendarPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C6E2BD530C200791861 /* CalendarPopup.swift */; };
+		4ED36C732BD69D8100791861 /* InsertAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C722BD69D8100791861 /* InsertAccountView.swift */; };
+		4ED36C772BD7ECE400791861 /* KeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C762BD7ECE400791861 /* KeyboardExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +49,6 @@
 /* Begin PBXFileReference section */
 		4ED36C152BD36C9E00791861 /* HappyBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HappyBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ED36C182BD36C9E00791861 /* HappyBookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappyBookApp.swift; sourceTree = "<group>"; };
-		4ED36C1A2BD36C9E00791861 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4ED36C1C2BD36C9F00791861 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4ED36C1F2BD36C9F00791861 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4ED36C252BD36CA000791861 /* HappyBookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HappyBookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +56,20 @@
 		4ED36C2F2BD36CA000791861 /* HappyBookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HappyBookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ED36C332BD36CA000791861 /* HappyBookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappyBookUITests.swift; sourceTree = "<group>"; };
 		4ED36C352BD36CA000791861 /* HappyBookUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappyBookUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4ED36C492BD37FF700791861 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		4ED36C4B2BD3822F00791861 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4ED36C4E2BD3869500791861 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		4ED36C502BD386D100791861 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		4ED36C5C2BD3963700791861 /* KakaoSignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoSignInButton.swift; sourceTree = "<group>"; };
+		4ED36C5E2BD41E9A00791861 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		4ED36C602BD41EA400791861 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
+		4ED36C622BD41EB000791861 /* AssetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetView.swift; sourceTree = "<group>"; };
+		4ED36C642BD41EB600791861 /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
+		4ED36C672BD41FF200791861 /* Symbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
+		4ED36C692BD4E91900791861 /* AccountRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRow.swift; sourceTree = "<group>"; };
+		4ED36C6E2BD530C200791861 /* CalendarPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPopup.swift; sourceTree = "<group>"; };
+		4ED36C722BD69D8100791861 /* InsertAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertAccountView.swift; sourceTree = "<group>"; };
+		4ED36C762BD7ECE400791861 /* KeyboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4ED36C5B2BD3925500791861 /* KakaoSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,10 +121,10 @@
 		4ED36C172BD36C9E00791861 /* HappyBook */ = {
 			isa = PBXGroup;
 			children = (
-				4ED36C182BD36C9E00791861 /* HappyBookApp.swift */,
-				4ED36C1A2BD36C9E00791861 /* ContentView.swift */,
-				4ED36C1C2BD36C9F00791861 /* Assets.xcassets */,
+				4ED36C442BD37BD600791861 /* Source */,
+				4ED36C432BD37BC100791861 /* Resources */,
 				4ED36C1E2BD36C9F00791861 /* Preview Content */,
+				4ED36C4C2BD3848C00791861 /* Supporting Files */,
 			);
 			path = HappyBook;
 			sourceTree = "<group>";
@@ -127,6 +154,131 @@
 			path = HappyBookUITests;
 			sourceTree = "<group>";
 		};
+		4ED36C432BD37BC100791861 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4ED36C1C2BD36C9F00791861 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4ED36C442BD37BD600791861 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				4ED36C182BD36C9E00791861 /* HappyBookApp.swift */,
+				4ED36C452BD37C0100791861 /* User Interface */,
+				4ED36C462BD37C0800791861 /* Model */,
+				4ED36C472BD37C2900791861 /* Utils */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		4ED36C452BD37C0100791861 /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				4ED36C502BD386D100791861 /* MainTabView.swift */,
+				4ED36C4D2BD3866200791861 /* Login */,
+				4ED36C522BD3876B00791861 /* Account */,
+				4ED36C532BD3877600791861 /* Statistics */,
+				4ED36C542BD3878B00791861 /* Asset */,
+				4ED36C552BD3879600791861 /* More */,
+			);
+			path = "User Interface";
+			sourceTree = "<group>";
+		};
+		4ED36C462BD37C0800791861 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4ED36C472BD37C2900791861 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4ED36C6D2BD530B700791861 /* ViewModifier */,
+				4ED36C662BD41FE400791861 /* CustomView */,
+				4ED36C482BD37FE100791861 /* Extension */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		4ED36C482BD37FE100791861 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4ED36C492BD37FF700791861 /* ColorExtension.swift */,
+				4ED36C762BD7ECE400791861 /* KeyboardExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		4ED36C4C2BD3848C00791861 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4ED36C4B2BD3822F00791861 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4ED36C4D2BD3866200791861 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4ED36C4E2BD3869500791861 /* LoginView.swift */,
+				4ED36C5C2BD3963700791861 /* KakaoSignInButton.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		4ED36C522BD3876B00791861 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				4ED36C5E2BD41E9A00791861 /* AccountView.swift */,
+				4ED36C692BD4E91900791861 /* AccountRow.swift */,
+				4ED36C722BD69D8100791861 /* InsertAccountView.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		4ED36C532BD3877600791861 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				4ED36C602BD41EA400791861 /* StatisticsView.swift */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
+		4ED36C542BD3878B00791861 /* Asset */ = {
+			isa = PBXGroup;
+			children = (
+				4ED36C622BD41EB000791861 /* AssetView.swift */,
+			);
+			path = Asset;
+			sourceTree = "<group>";
+		};
+		4ED36C552BD3879600791861 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				4ED36C642BD41EB600791861 /* MoreView.swift */,
+			);
+			path = More;
+			sourceTree = "<group>";
+		};
+		4ED36C662BD41FE400791861 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				4ED36C672BD41FF200791861 /* Symbol.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		4ED36C6D2BD530B700791861 /* ViewModifier */ = {
+			isa = PBXGroup;
+			children = (
+				4ED36C6E2BD530C200791861 /* CalendarPopup.swift */,
+			);
+			path = ViewModifier;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +295,9 @@
 			dependencies = (
 			);
 			name = HappyBook;
+			packageProductDependencies = (
+				4ED36C5A2BD3925500791861 /* KakaoSDK */,
+			);
 			productName = HappyBook;
 			productReference = 4ED36C152BD36C9E00791861 /* HappyBook.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +370,9 @@
 				Base,
 			);
 			mainGroup = 4ED36C0C2BD36C9E00791861;
+			packageReferences = (
+				4ED36C592BD3925500791861 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
+			);
 			productRefGroup = 4ED36C162BD36C9E00791861 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -257,8 +415,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4ED36C1B2BD36C9E00791861 /* ContentView.swift in Sources */,
+				4ED36C5F2BD41E9A00791861 /* AccountView.swift in Sources */,
+				4ED36C6F2BD530C200791861 /* CalendarPopup.swift in Sources */,
+				4ED36C682BD41FF200791861 /* Symbol.swift in Sources */,
+				4ED36C652BD41EB600791861 /* MoreView.swift in Sources */,
+				4ED36C4A2BD37FF700791861 /* ColorExtension.swift in Sources */,
+				4ED36C4F2BD3869500791861 /* LoginView.swift in Sources */,
+				4ED36C612BD41EA400791861 /* StatisticsView.swift in Sources */,
+				4ED36C732BD69D8100791861 /* InsertAccountView.swift in Sources */,
+				4ED36C772BD7ECE400791861 /* KeyboardExtension.swift in Sources */,
 				4ED36C192BD36C9E00791861 /* HappyBookApp.swift in Sources */,
+				4ED36C6A2BD4E91900791861 /* AccountRow.swift in Sources */,
+				4ED36C632BD41EB000791861 /* AssetView.swift in Sources */,
+				4ED36C5D2BD3963700791861 /* KakaoSignInButton.swift in Sources */,
+				4ED36C512BD386D100791861 /* MainTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,11 +594,14 @@
 				DEVELOPMENT_ASSET_PATHS = "\"HappyBook/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "HappyBook/Supporting Files/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -436,6 +609,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.woghks131.HappyBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -452,11 +629,14 @@
 				DEVELOPMENT_ASSET_PATHS = "\"HappyBook/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "HappyBook/Supporting Files/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -464,6 +644,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.woghks131.HappyBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -582,6 +766,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4ED36C592BD3925500791861 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kakao/kakao-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4ED36C5A2BD3925500791861 /* KakaoSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4ED36C592BD3925500791861 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDK;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4ED36C0D2BD36C9E00791861 /* Project object */;
 }

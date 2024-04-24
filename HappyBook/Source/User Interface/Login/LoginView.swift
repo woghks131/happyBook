@@ -9,7 +9,25 @@ import SwiftUI
 
 struct LoginView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            
+            Spacer()
+            
+            Text("행복 가계부")
+                .font(.largeTitle)
+                .fontWeight(.medium)
+                .foregroundStyle(.peach)
+            
+            Image("pig")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 150, height: 150)
+            
+            Spacer()
+            Spacer()
+            
+            KakaoSignInButton()
+        }
     }
 }
 

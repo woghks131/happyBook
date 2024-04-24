@@ -8,11 +8,25 @@
 import SwiftUI
 
 struct Symbol: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    
+    let systemName: String
+    let imageScale: Image.Scale
+    let color: Color?
+    
+    init(
+        _ systemName: String,
+        scale imageScale: Image.Scale = .medium,
+        color: Color? = nil
+    ) {
+        self.systemName = systemName
+        self.imageScale = imageScale
+        self.color = color
     }
-}
-
-#Preview {
-    Symbol()
+    
+    
+    var body: some View {
+        Image(systemName: systemName)
+            .imageScale(imageScale)
+            .foregroundStyle(color ?? .white)
+    }
 }
