@@ -10,25 +10,40 @@ import SwiftUI
 struct InsertAccountView: View {
     @Environment(\.presentationMode) var presentationMode
     
+    // 수입/지출 picker
     private let pickerDataSource = ["수입", "지출"]
     @State var pickerOption: String = "수입"
     
+    //하단시트 크기
     @State var detents: PresentationDetent = .medium
     
-    @State private var isDateSheetPresented = false
+    //날짜
     @State private var date: Date = Date()
 
+    //금액
     @State private var price: String = ""
     @State private var isPricePresented = false
     
+    //분류
+    @State private var division: Division = Division(name: "", imageName: "")
     @State private var isDivisionSheetPresented = false
+    
+    //자산
+    @State private var asset: String = ""
     @State private var isAssetSheetPresented = false
     
+    //내용
     @State private var contents: String = ""
     @State private var isContentsPresented = false
     
+    //메모
     @State private var memo: String = ""
     @State private var isMemoPresented = false
+    
+    @State private var showingAlert = false
+    @State private var alertItem: String = ""
+    
+    
 
     var body: some View {
         navigationBarView
@@ -83,27 +98,26 @@ private extension InsertAccountView {
         
     }
     
+    var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        return formatter
+    }
+    
     var DateView: some View {
         HStack {
             Text("날짜")
                 .font(.system(size: 15))
                 .foregroundStyle(.gray)
-            Text("")
-                .frame(width: UIScreen.main.bounds.width * 0.75, height: 30)
-                .background(.white)
-                .multilineTextAlignment(.center)
+            DatePicker(selection: $date, in: ...Date(), displayedComponents: .date
+            ) {}.padding()
+                .environment(\.locale, Locale(identifier: "ko_KR"))
+                .labelsHidden()
+            DatePicker(selection: $date, in: ...Date(), displayedComponents: .hourAndMinute
+            ) {}
+                .environment(\.locale, Locale(identifier: "ko_KR"))
                 .padding()
-                .tint(.clear)
-                .onTapGesture {
-
-                }
-                .overlay(
-                    Rectangle()
-                        .frame(height: 2)
-                        .padding(.top, 35)
-                        .padding(.horizontal)
-                        .foregroundStyle(isDateSheetPresented ? pickerOption == "수입" ? .blue : .red : .gray)
-                )
+                
         }
         .padding([.top, .bottom], 1)
         .padding([.leading, .trailing])
@@ -133,12 +147,32 @@ private extension InsertAccountView {
                     self.isPricePresented = false
                 })
                 .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { _ in
-                                    // 키보드가 내려갈 때 색상을 회색으로 변경
-                                    isPricePresented = false
-                                }
+                        // 키보드가 내려갈 때 색상을 회색으로 변경
+                        isPricePresented = false
+                    }
+                .onChange(of: price) { newValue in
+                    
+                    // 입력된 값에서 숫자와 콤마를 제외한 문자를 모두 제거합니다.
+                    let filtered = newValue.filter { "0123456789".contains($0) }
+                    // 숫자를 세 자리 콤마로 구분하여 표시합니다.
+                    price = formatAmount(filtered)
+                }
+                
         }
         .padding([.top, .bottom], 1)
         .padding([.leading, .trailing])
+    }
+    
+    // 세 자리 콤마로 포맷하는 함수
+    private func formatAmount(_ amount: String) -> String {
+        guard !amount.isEmpty else { return "" }
+
+        // 입력된 숫자 문자열을 Int로 변환합니다.
+        let number = Int(amount) ?? 0
+        // 숫자를 세 자리 콤마로 포맷하여 반환합니다.
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        return formatter.string(from: NSNumber(value: number)) ?? ""
     }
     
     var DivisionView: some View {
@@ -146,28 +180,34 @@ private extension InsertAccountView {
             Text("분류")
                 .font(.system(size: 15))
                 .foregroundStyle(.gray)
-            Text("")
-                .frame(width: UIScreen.main.bounds.width * 0.75, height: 30)
-                .background(.white)
-                .multilineTextAlignment(.center)
-                .padding()
-                .tint(.clear)
-                .onTapGesture {
-                    
-                    isDivisionSheetPresented = true
-                }
-                .overlay(
-                    Rectangle()
-                        .frame(height: 2)
-                        .padding(.top, 35)
-                        .padding(.horizontal)
-                        .foregroundStyle(isDivisionSheetPresented ? pickerOption == "수입" ? .blue : .red : .gray)
-                )
-                .sheet(isPresented: $isDivisionSheetPresented) {
-                    DivisionModalView()
-                            // 높이 선택 값 바인딩)
-                            .presentationDetents([.medium, .large], selection: $detents)
-                }
+            
+            HStack {
+                Symbol(division.imageName, scale: .small, color: .black)
+                Text(division.name)
+            }
+            .frame(width: UIScreen.main.bounds.width * 0.75, height: 30)
+            .background(.white)
+            .multilineTextAlignment(.center)
+            .padding()
+            .tint(.clear)
+            .onTapGesture {
+                
+                isDivisionSheetPresented = true
+            }
+            .overlay(
+                Rectangle()
+                    .frame(height: 2)
+                    .padding(.top, 35)
+                    .padding(.horizontal)
+                    .foregroundStyle(isDivisionSheetPresented ? pickerOption == "수입" ? .blue : .red : .gray)
+            )
+            .sheet(isPresented: $isDivisionSheetPresented) {
+                DivisionModalView(division: $division)
+                        // 높이 선택 값 바인딩)
+                        .presentationDetents([.medium, .large], selection: $detents)
+            }
+            
+            
         }
         .padding([.top, .bottom], 1)
         .padding([.leading, .trailing])
@@ -178,20 +218,8 @@ private extension InsertAccountView {
     struct DivisionModalView: View {
         
         //분류 카테고리
-        private let categories = [
-            ["식비", "fork.knife"],
-            ["교통/차량", "car"],
-            ["문화생활", "photo.circle"],
-            ["마트/편의점", "cart"],
-            ["패션/미용", "hanger"],
-            ["생활용품", "pencil"],
-            ["주거/통신", "house"],
-            ["건강", "figure.walk.motion"],
-            ["교육", "book"],
-            ["경조사/회비", "archivebox"],
-            ["부모님", "person"],
-            ["기타", ""]
-        ]
+        private let categories:[Division] = Store().divisions
+        @Binding var division: Division
         
         var body: some View {
             GeometryReader { g in
@@ -203,15 +231,13 @@ private extension InsertAccountView {
                         .foregroundStyle(.white)
                         .background(.peach)
                     
-                    VStack(spacing: 0) {
-                        ForEach(0..<3, id: \.self) { row in
-                            HStack(spacing: 0) {
-                                ForEach(0..<4, id: \.self) { column in
-                                    CategoryButton(
-                                        imageName: self.categories[row * 4 + column][1], text: self.categories[row * 4 + column][0]
-                                    )
-                                }
-                            }
+                    LazyVGrid(
+                        columns: Array(repeating: GridItem(spacing: 0),
+                        count: 4
+                    ), spacing: 0)
+                    {
+                        ForEach(categories) { category in
+                            CategoryButton(imageName: category.imageName, text: category.name, selectedDivision: $division)
                         }
                     }
                 }
@@ -223,9 +249,14 @@ private extension InsertAccountView {
     struct CategoryButton: View {
         let imageName: String   //버튼 이미지
         let text: String        //버튼 이름
+        @Binding var selectedDivision: Division
+        @Environment(\.presentationMode) var presentationMode
         
         var body: some View {
-            Button(action: {}) {
+            Button(action: {
+                selectedDivision = Division(name: text, imageName: imageName)
+                presentationMode.wrappedValue.dismiss()
+            }) {
                 HStack {
                     Symbol(imageName, scale: .small, color: .black)
                     
@@ -245,7 +276,7 @@ private extension InsertAccountView {
             Text("자산")
                 .font(.system(size: 15))
                 .foregroundStyle(.gray)
-            Text("")
+            Text(asset)
                 .frame(width: UIScreen.main.bounds.width * 0.75, height: 30)
                 .background(.white)
                 .multilineTextAlignment(.center)
@@ -263,7 +294,7 @@ private extension InsertAccountView {
                         .foregroundStyle(isAssetSheetPresented ? pickerOption == "수입" ? .blue : .red : .gray)
                 )
                 .sheet(isPresented: $isAssetSheetPresented) {
-                    AssetModalView()
+                    AssetModalView(asset: $asset)
                             // 높이 선택 값 바인딩)
                             .presentationDetents([.medium, .large], selection: $detents)
                 }
@@ -275,7 +306,8 @@ private extension InsertAccountView {
     struct AssetModalView: View {
         
         //자산 카테고리
-        private let categories = ["현금","신한은행","카카오뱅크","하나은행","삼성카드","하나카드"]
+        @ObservedObject var categories = Store()
+        @Binding var asset: String
         
         var body: some View {
             GeometryReader { g in
@@ -287,32 +319,43 @@ private extension InsertAccountView {
                         .foregroundStyle(.white)
                         .background(.peach)
                     
-                    VStack(spacing: 0) {
-                        HStack(spacing: 0) {
-                            CategoryButton(
-                                imageName: "", text: self.categories[0]
-                            )
-                            CategoryButton(
-                                imageName: "", text: self.categories[1]
-                            )
-                            CategoryButton(
-                                imageName: "", text: self.categories[2]
-                            )
-                            CategoryButton(
-                                imageName: "", text: self.categories[3]
-                            )
-                        }
-                        HStack(spacing: 0) {
-                            CategoryButton(
-                                imageName: "", text: self.categories[4]
-                            )
-                            CategoryButton(
-                                imageName: "", text: self.categories[5]
-                            )
+                    LazyVGrid(
+                        columns: Array(repeating: GridItem(spacing: 0),
+                        count: 4
+                    ), spacing: 0)
+                    {
+                        ForEach(Array(categories.assets)) { asset in
+                            AssetCategoryButton(imageName: "", text: asset.name, selectedAsset: $asset)
                         }
                     }
                 }
             }
+        }
+    }
+    
+    //자산 버튼카테고리
+    struct AssetCategoryButton: View {
+        let imageName: String   //버튼 이미지
+        let text: String        //버튼 이름
+        @Binding var selectedAsset: String
+        @Environment(\.presentationMode) var presentationMode
+        
+        var body: some View {
+            Button(action: {
+                selectedAsset = text
+                presentationMode.wrappedValue.dismiss()
+            }) {
+                HStack {
+                    Symbol(imageName, scale: .small, color: .black)
+                    
+                    Text(text)
+                        .font(.system(size: 15))
+                        .foregroundStyle(.black)
+                }
+            }
+            .frame(maxWidth: .infinity)
+            .frame(height: 60)
+            .border(.gray)
         }
     }
     
@@ -384,8 +427,10 @@ private extension InsertAccountView {
     
     var SaveButtonView: some View {
         HStack {
-            Button(action: { 
-                self.presentationMode.wrappedValue.dismiss()
+            Button(action: {
+                if validationCheck() {
+                    self.presentationMode.wrappedValue.dismiss()
+                }
             }) {
                 Text("저장하기")
                     .padding()
@@ -394,7 +439,35 @@ private extension InsertAccountView {
                     .foregroundStyle(pickerOption == "수입" ? .blue : .red)
             }
         }
+        .alert(isPresented: $showingAlert, content: {
+            Alert(title: Text("알림"), message: Text("\(alertItem)을(를) 확인해 주세요."),
+                  dismissButton: .default(Text("확인")))
+        })
     }
+    
+    private func validationCheck() -> Bool {
+        if price.isEmpty {
+            alertItem = "금액"
+            showingAlert = true
+            return false
+        } else if division.name.isEmpty {
+            alertItem = "분류"
+            showingAlert = true
+            return false
+        } else if asset.isEmpty {
+            alertItem = "자산"
+            showingAlert = true
+            return false
+        } else if contents.isEmpty {
+            alertItem = "내용"
+            showingAlert = true
+            return false
+        }
+        
+        
+        return true
+    }
+    
 }
 
 
