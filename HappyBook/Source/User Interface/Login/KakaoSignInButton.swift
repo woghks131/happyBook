@@ -28,6 +28,9 @@ struct KakaoSignInButton: View {
                     if let error = error {
                         print(error)
                     }
+                    
+                    MainTabView()
+                        .environmentObject(Store())
 //                    if let oauthToken = oauthToken {
 //                        print("kakao success !")
 //                    }
@@ -44,4 +47,5 @@ struct KakaoSignInButton: View {
 
 #Preview {
     KakaoSignInButton()
+        .environmentObject(Store())
 }

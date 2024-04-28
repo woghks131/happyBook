@@ -8,11 +8,28 @@
 import SwiftUI
 
 struct DateInputView: View {
+    @Binding var date: Date
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Text("날짜")
+                .font(.system(size: 15))
+                .foregroundStyle(.gray)
+            DatePicker(selection: $date, in: ...Date(), displayedComponents: .date
+            ) {}.padding()
+                .environment(\.locale, Locale(identifier: "ko_KR"))
+                .labelsHidden()
+            DatePicker(selection: $date, in: ...Date(), displayedComponents: .hourAndMinute
+            ) {}
+                .environment(\.locale, Locale(identifier: "ko_KR"))
+                .padding()
+                
+        }
+        .padding([.top, .bottom], 1)
+        .padding([.leading, .trailing])
     }
 }
 
 #Preview {
-    DateInputView()
+    DateInputView(date: .constant(.now))
 }

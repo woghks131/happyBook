@@ -11,9 +11,9 @@ struct AccountRow: View {
     var body: some View {
         VStack {
             headView
-            darkerDivider
+            DividerView()
             memoView
-            darkerDivider
+            DividerView()
             accountView
         }
         .padding(.bottom, 15)
@@ -118,14 +118,9 @@ private extension AccountRow {
         }
         
     }
-    
-    var darkerDivider: some View {
-      Color.primary
-        .opacity(0.3)
-        .frame(maxWidth: .infinity, maxHeight: 1)
-    }
 }
 
 #Preview {
     AccountRow()
+        .environmentObject(Store())
 }

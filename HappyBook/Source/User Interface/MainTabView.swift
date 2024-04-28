@@ -13,7 +13,10 @@ struct MainTabView: View {
         case account, statistics, asset, more
     }
     
+    @EnvironmentObject private var store: Store
+    
     @State private var selectedTab: Tabs = .account
+    
     
     var body: some View {
         TabView(selection: $selectedTab) {
@@ -74,4 +77,5 @@ fileprivate extension View {
 
 #Preview {
     MainTabView()
+        .environmentObject(Store())
 }

@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct TabInfo {
+    let id: UUID = UUID()
+    var incomePrice: String
+    var expensesPrice: String
+    var sumPrice: String
+}

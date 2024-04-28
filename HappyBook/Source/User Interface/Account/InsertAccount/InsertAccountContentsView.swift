@@ -8,11 +8,40 @@
 import SwiftUI
 
 struct InsertAccountContentsView: View {
+    @Binding var pickerOption: String
+    @Binding var date: Date
+    @Binding var price: String
+    @Binding var division: Division
+    @Binding var asset: String
+    @Binding var contents: String
+    @Binding var memo: String
+    
+    private let pickerDataSource = ["수입", "지출"]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Picker("", selection: $pickerOption) {
+            ForEach(pickerDataSource, id: \.self) {
+                Text($0)
+                    .foregroundStyle(.white)
+            }
+        }
+        .pickerStyle(SegmentedPickerStyle())
+        .frame(height: 72)
+        .padding()
+        
+        VStack {
+            DateInputView(date: $date)
+            PriceInputView(price: $price, pickerOption: $pickerOption, isPresented: false)
+            DivisionInputView(division: $division, pickerOption: $pickerOption, isPresented: false)
+            AssetInputView(asset: $asset, pickerOption: $pickerOption, isPresented: false)
+            ContentsInputView(contents: $contents, pickerOption: $pickerOption, isPresented: false)
+            MemoInputView(memo: $memo, pickerOption: $pickerOption, isPresented: false)
+            SaveButtonView(pickerOption: $pickerOption, date: $date, price: $price, division: $division, asset: $asset, contents: $contents, memo: $memo, reloadFlag: .constant(false))
+        }
     }
 }
 
 #Preview {
-    InsertAccountContentsView()
+    InsertAccountContentsView(pickerOption: .constant("수입"), date: .constant(.now), price: .constant(""), division: .constant(Division(name: "", imageName: "")), asset: .constant(""), contents: .constant(""), memo: .constant(""))
+        .environmentObject(Store())
 }

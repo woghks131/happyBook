@@ -8,11 +8,21 @@
 import SwiftUI
 
 struct DividerView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    
+    let opacity: Double
+    let maxHeight: CGFloat
+    
+    init(
+        opacity: Double = 0.3,
+        maxHeight: CGFloat = 1
+    ) {
+        self.opacity = opacity
+        self.maxHeight = maxHeight
     }
-}
-
-#Preview {
-    DividerView()
+    
+    var body: some View {
+        Color.primary
+          .opacity(opacity)
+          .frame(maxWidth: .infinity, maxHeight: maxHeight)
+    }
 }

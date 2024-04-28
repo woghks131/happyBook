@@ -25,6 +25,7 @@ struct HappyBookApp: App {
         WindowGroup {
             if (AuthApi.hasToken()) {
                 MainTabView()
+                    .environmentObject(Store())
             } else {
                 LoginView()
                     .onOpenURL { url in

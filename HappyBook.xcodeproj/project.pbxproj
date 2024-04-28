@@ -27,6 +27,30 @@
 		4ED36C6F2BD530C200791861 /* CalendarPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C6E2BD530C200791861 /* CalendarPopup.swift */; };
 		4ED36C732BD69D8100791861 /* InsertAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C722BD69D8100791861 /* InsertAccountView.swift */; };
 		4ED36C772BD7ECE400791861 /* KeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C762BD7ECE400791861 /* KeyboardExtension.swift */; };
+		4ED36C792BDA858E00791861 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C782BDA858E00791861 /* Account.swift */; };
+		4ED36C7E2BDA888700791861 /* DivisionData.json in Resources */ = {isa = PBXBuildFile; fileRef = 4ED36C7D2BDA888700791861 /* DivisionData.json */; };
+		4ED36C802BDA89C100791861 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C7F2BDA89C100791861 /* Asset.swift */; };
+		4ED36C822BDA96E900791861 /* Division.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C812BDA96E900791861 /* Division.swift */; };
+		4ED36C842BDA998B00791861 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C832BDA998B00791861 /* Store.swift */; };
+		4ED36C862BDA9A1700791861 /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C852BDA9A1700791861 /* BundleExtension.swift */; };
+		4ED36C892BDBEB0700791861 /* InsertAccountNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C882BDBEB0700791861 /* InsertAccountNavigationView.swift */; };
+		4ED36C8B2BDBEC5700791861 /* InsertAccountContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C8A2BDBEC5700791861 /* InsertAccountContentsView.swift */; };
+		4ED36C8D2BDBF2DA00791861 /* DateInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C8C2BDBF2DA00791861 /* DateInputView.swift */; };
+		4ED36C8F2BDBF34500791861 /* PriceInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C8E2BDBF34500791861 /* PriceInputView.swift */; };
+		4ED36C912BDBF5E700791861 /* DivisionInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C902BDBF5E700791861 /* DivisionInputView.swift */; };
+		4ED36C932BDBF66900791861 /* DivisionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C922BDBF66900791861 /* DivisionModalView.swift */; };
+		4ED36C952BDBF6A700791861 /* DIvisionCategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C942BDBF6A700791861 /* DIvisionCategoryButton.swift */; };
+		4ED36C972BDBF83E00791861 /* AssetInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C962BDBF83E00791861 /* AssetInputView.swift */; };
+		4ED36C992BDBF89600791861 /* AssetModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C982BDBF89600791861 /* AssetModalView.swift */; };
+		4ED36C9B2BDBF8B100791861 /* AssetCategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C9A2BDBF8B100791861 /* AssetCategoryButton.swift */; };
+		4ED36C9D2BDBF97D00791861 /* ContentsInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C9C2BDBF97D00791861 /* ContentsInputView.swift */; };
+		4ED36C9F2BDBF9ED00791861 /* MemoInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C9E2BDBF9ED00791861 /* MemoInputView.swift */; };
+		4ED36CA12BDBFA5000791861 /* SaveButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36CA02BDBFA5000791861 /* SaveButtonView.swift */; };
+		4ED36CA32BDD0CC500791861 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36CA22BDD0CC500791861 /* DateExtension.swift */; };
+		4ED36CA52BDD0F5800791861 /* AccountTabMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36CA42BDD0F5800791861 /* AccountTabMenuView.swift */; };
+		4ED36CA92BDD119300791861 /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36CA82BDD119300791861 /* DividerView.swift */; };
+		4ED36CAB2BDD130200791861 /* AccountFloatingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36CAA2BDD130200791861 /* AccountFloatingButtonView.swift */; };
+		4ED36CAD2BDD2F9600791861 /* TabInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36CAC2BDD2F9600791861 /* TabInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +94,30 @@
 		4ED36C6E2BD530C200791861 /* CalendarPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPopup.swift; sourceTree = "<group>"; };
 		4ED36C722BD69D8100791861 /* InsertAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertAccountView.swift; sourceTree = "<group>"; };
 		4ED36C762BD7ECE400791861 /* KeyboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardExtension.swift; sourceTree = "<group>"; };
+		4ED36C782BDA858E00791861 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		4ED36C7D2BDA888700791861 /* DivisionData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DivisionData.json; sourceTree = "<group>"; };
+		4ED36C7F2BDA89C100791861 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
+		4ED36C812BDA96E900791861 /* Division.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Division.swift; sourceTree = "<group>"; };
+		4ED36C832BDA998B00791861 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		4ED36C852BDA9A1700791861 /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
+		4ED36C882BDBEB0700791861 /* InsertAccountNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertAccountNavigationView.swift; sourceTree = "<group>"; };
+		4ED36C8A2BDBEC5700791861 /* InsertAccountContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertAccountContentsView.swift; sourceTree = "<group>"; };
+		4ED36C8C2BDBF2DA00791861 /* DateInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInputView.swift; sourceTree = "<group>"; };
+		4ED36C8E2BDBF34500791861 /* PriceInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceInputView.swift; sourceTree = "<group>"; };
+		4ED36C902BDBF5E700791861 /* DivisionInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivisionInputView.swift; sourceTree = "<group>"; };
+		4ED36C922BDBF66900791861 /* DivisionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivisionModalView.swift; sourceTree = "<group>"; };
+		4ED36C942BDBF6A700791861 /* DIvisionCategoryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIvisionCategoryButton.swift; sourceTree = "<group>"; };
+		4ED36C962BDBF83E00791861 /* AssetInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetInputView.swift; sourceTree = "<group>"; };
+		4ED36C982BDBF89600791861 /* AssetModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetModalView.swift; sourceTree = "<group>"; };
+		4ED36C9A2BDBF8B100791861 /* AssetCategoryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetCategoryButton.swift; sourceTree = "<group>"; };
+		4ED36C9C2BDBF97D00791861 /* ContentsInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsInputView.swift; sourceTree = "<group>"; };
+		4ED36C9E2BDBF9ED00791861 /* MemoInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoInputView.swift; sourceTree = "<group>"; };
+		4ED36CA02BDBFA5000791861 /* SaveButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButtonView.swift; sourceTree = "<group>"; };
+		4ED36CA22BDD0CC500791861 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		4ED36CA42BDD0F5800791861 /* AccountTabMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTabMenuView.swift; sourceTree = "<group>"; };
+		4ED36CA82BDD119300791861 /* DividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
+		4ED36CAA2BDD130200791861 /* AccountFloatingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountFloatingButtonView.swift; sourceTree = "<group>"; };
+		4ED36CAC2BDD2F9600791861 /* TabInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				4ED36C1C2BD36C9F00791861 /* Assets.xcassets */,
+				4ED36C7D2BDA888700791861 /* DivisionData.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -189,6 +238,11 @@
 		4ED36C462BD37C0800791861 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4ED36C782BDA858E00791861 /* Account.swift */,
+				4ED36C7F2BDA89C100791861 /* Asset.swift */,
+				4ED36C812BDA96E900791861 /* Division.swift */,
+				4ED36C832BDA998B00791861 /* Store.swift */,
+				4ED36CAC2BDD2F9600791861 /* TabInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -206,8 +260,10 @@
 		4ED36C482BD37FE100791861 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				4ED36CA22BDD0CC500791861 /* DateExtension.swift */,
 				4ED36C492BD37FF700791861 /* ColorExtension.swift */,
 				4ED36C762BD7ECE400791861 /* KeyboardExtension.swift */,
+				4ED36C852BDA9A1700791861 /* BundleExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -234,7 +290,9 @@
 			children = (
 				4ED36C5E2BD41E9A00791861 /* AccountView.swift */,
 				4ED36C692BD4E91900791861 /* AccountRow.swift */,
-				4ED36C722BD69D8100791861 /* InsertAccountView.swift */,
+				4ED36CA42BDD0F5800791861 /* AccountTabMenuView.swift */,
+				4ED36CAA2BDD130200791861 /* AccountFloatingButtonView.swift */,
+				4ED36C872BDBE6D500791861 /* InsertAccount */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -267,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				4ED36C672BD41FF200791861 /* Symbol.swift */,
+				4ED36CA82BDD119300791861 /* DividerView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -277,6 +336,27 @@
 				4ED36C6E2BD530C200791861 /* CalendarPopup.swift */,
 			);
 			path = ViewModifier;
+			sourceTree = "<group>";
+		};
+		4ED36C872BDBE6D500791861 /* InsertAccount */ = {
+			isa = PBXGroup;
+			children = (
+				4ED36C722BD69D8100791861 /* InsertAccountView.swift */,
+				4ED36C882BDBEB0700791861 /* InsertAccountNavigationView.swift */,
+				4ED36C8A2BDBEC5700791861 /* InsertAccountContentsView.swift */,
+				4ED36C8C2BDBF2DA00791861 /* DateInputView.swift */,
+				4ED36C8E2BDBF34500791861 /* PriceInputView.swift */,
+				4ED36C902BDBF5E700791861 /* DivisionInputView.swift */,
+				4ED36C922BDBF66900791861 /* DivisionModalView.swift */,
+				4ED36C942BDBF6A700791861 /* DIvisionCategoryButton.swift */,
+				4ED36C962BDBF83E00791861 /* AssetInputView.swift */,
+				4ED36C982BDBF89600791861 /* AssetModalView.swift */,
+				4ED36C9A2BDBF8B100791861 /* AssetCategoryButton.swift */,
+				4ED36C9C2BDBF97D00791861 /* ContentsInputView.swift */,
+				4ED36C9E2BDBF9ED00791861 /* MemoInputView.swift */,
+				4ED36CA02BDBFA5000791861 /* SaveButtonView.swift */,
+			);
+			path = InsertAccount;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,6 +448,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = 4ED36C0C2BD36C9E00791861;
 			packageReferences = (
@@ -390,6 +471,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4ED36C202BD36C9F00791861 /* Preview Assets.xcassets in Resources */,
+				4ED36C7E2BDA888700791861 /* DivisionData.json in Resources */,
 				4ED36C1D2BD36C9F00791861 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,17 +500,40 @@
 				4ED36C5F2BD41E9A00791861 /* AccountView.swift in Sources */,
 				4ED36C6F2BD530C200791861 /* CalendarPopup.swift in Sources */,
 				4ED36C682BD41FF200791861 /* Symbol.swift in Sources */,
+				4ED36C9B2BDBF8B100791861 /* AssetCategoryButton.swift in Sources */,
+				4ED36C992BDBF89600791861 /* AssetModalView.swift in Sources */,
+				4ED36C8D2BDBF2DA00791861 /* DateInputView.swift in Sources */,
+				4ED36C842BDA998B00791861 /* Store.swift in Sources */,
+				4ED36C862BDA9A1700791861 /* BundleExtension.swift in Sources */,
+				4ED36C822BDA96E900791861 /* Division.swift in Sources */,
+				4ED36CA92BDD119300791861 /* DividerView.swift in Sources */,
+				4ED36CAB2BDD130200791861 /* AccountFloatingButtonView.swift in Sources */,
 				4ED36C652BD41EB600791861 /* MoreView.swift in Sources */,
 				4ED36C4A2BD37FF700791861 /* ColorExtension.swift in Sources */,
+				4ED36C792BDA858E00791861 /* Account.swift in Sources */,
+				4ED36C802BDA89C100791861 /* Asset.swift in Sources */,
+				4ED36CA52BDD0F5800791861 /* AccountTabMenuView.swift in Sources */,
 				4ED36C4F2BD3869500791861 /* LoginView.swift in Sources */,
+				4ED36CAD2BDD2F9600791861 /* TabInfo.swift in Sources */,
+				4ED36C972BDBF83E00791861 /* AssetInputView.swift in Sources */,
+				4ED36C8F2BDBF34500791861 /* PriceInputView.swift in Sources */,
+				4ED36C932BDBF66900791861 /* DivisionModalView.swift in Sources */,
+				4ED36C912BDBF5E700791861 /* DivisionInputView.swift in Sources */,
 				4ED36C612BD41EA400791861 /* StatisticsView.swift in Sources */,
+				4ED36C952BDBF6A700791861 /* DIvisionCategoryButton.swift in Sources */,
 				4ED36C732BD69D8100791861 /* InsertAccountView.swift in Sources */,
+				4ED36CA12BDBFA5000791861 /* SaveButtonView.swift in Sources */,
+				4ED36C8B2BDBEC5700791861 /* InsertAccountContentsView.swift in Sources */,
 				4ED36C772BD7ECE400791861 /* KeyboardExtension.swift in Sources */,
 				4ED36C192BD36C9E00791861 /* HappyBookApp.swift in Sources */,
+				4ED36C892BDBEB0700791861 /* InsertAccountNavigationView.swift in Sources */,
 				4ED36C6A2BD4E91900791861 /* AccountRow.swift in Sources */,
 				4ED36C632BD41EB000791861 /* AssetView.swift in Sources */,
+				4ED36CA32BDD0CC500791861 /* DateExtension.swift in Sources */,
 				4ED36C5D2BD3963700791861 /* KakaoSignInButton.swift in Sources */,
 				4ED36C512BD386D100791861 /* MainTabView.swift in Sources */,
+				4ED36C9D2BDBF97D00791861 /* ContentsInputView.swift in Sources */,
+				4ED36C9F2BDBF9ED00791861 /* MemoInputView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

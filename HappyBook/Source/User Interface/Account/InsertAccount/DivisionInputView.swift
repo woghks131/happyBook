@@ -1,5 +1,5 @@
 //
-//  DivisionView.swift
+//  DivisionInputView.swift
 //  HappyBook
 //
 //  Created by 박재환 on 4/26/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DivisionView: View {
+struct DivisionInputView: View {
     @Binding var division: Division
     @Binding var pickerOption: String
     
@@ -54,5 +54,5 @@ struct DivisionView: View {
 }
 
 #Preview {
-    DivisionView(division: .constant(Division(name: "", imageName: "")), pickerOption: .constant("수입"), isPresented: false)
+    DivisionInputView(division: .constant(Division(name: "", imageName: "")), pickerOption: .constant("수입"), isPresented: false)
 }
