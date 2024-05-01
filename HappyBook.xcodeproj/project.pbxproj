@@ -51,6 +51,8 @@
 		4ED36CA92BDD119300791861 /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36CA82BDD119300791861 /* DividerView.swift */; };
 		4ED36CAB2BDD130200791861 /* AccountFloatingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36CAA2BDD130200791861 /* AccountFloatingButtonView.swift */; };
 		4ED36CAD2BDD2F9600791861 /* TabInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36CAC2BDD2F9600791861 /* TabInfo.swift */; };
+		4ED36CAF2BDFB86F00791861 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36CAE2BDFB86F00791861 /* UserAccount.swift */; };
+		4ED36CB12BDFC31800791861 /* DailyAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36CB02BDFC31800791861 /* DailyAccount.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +120,8 @@
 		4ED36CA82BDD119300791861 /* DividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
 		4ED36CAA2BDD130200791861 /* AccountFloatingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountFloatingButtonView.swift; sourceTree = "<group>"; };
 		4ED36CAC2BDD2F9600791861 /* TabInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabInfo.swift; sourceTree = "<group>"; };
+		4ED36CAE2BDFB86F00791861 /* UserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
+		4ED36CB02BDFC31800791861 /* DailyAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyAccount.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,10 +243,12 @@
 			isa = PBXGroup;
 			children = (
 				4ED36C782BDA858E00791861 /* Account.swift */,
+				4ED36CB02BDFC31800791861 /* DailyAccount.swift */,
 				4ED36C7F2BDA89C100791861 /* Asset.swift */,
 				4ED36C812BDA96E900791861 /* Division.swift */,
 				4ED36C832BDA998B00791861 /* Store.swift */,
 				4ED36CAC2BDD2F9600791861 /* TabInfo.swift */,
+				4ED36CAE2BDFB86F00791861 /* UserAccount.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -520,7 +526,9 @@
 				4ED36C932BDBF66900791861 /* DivisionModalView.swift in Sources */,
 				4ED36C912BDBF5E700791861 /* DivisionInputView.swift in Sources */,
 				4ED36C612BD41EA400791861 /* StatisticsView.swift in Sources */,
+				4ED36CB12BDFC31800791861 /* DailyAccount.swift in Sources */,
 				4ED36C952BDBF6A700791861 /* DIvisionCategoryButton.swift in Sources */,
+				4ED36CAF2BDFB86F00791861 /* UserAccount.swift in Sources */,
 				4ED36C732BD69D8100791861 /* InsertAccountView.swift in Sources */,
 				4ED36CA12BDBFA5000791861 /* SaveButtonView.swift in Sources */,
 				4ED36C8B2BDBEC5700791861 /* InsertAccountContentsView.swift in Sources */,

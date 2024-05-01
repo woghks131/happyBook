@@ -19,6 +19,9 @@ struct KakaoSignInButton: View {
                     if let error = error {
                         print(error)
                     }
+                    
+                    MainTabView()
+                        .environmentObject(Store())
 //                    if let oauthToken = oauthToken {
 //                        print("회원가입 API CALL")
 //                    }

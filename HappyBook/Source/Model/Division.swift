@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Division {
+struct Division: Hashable {
     let id: UUID = UUID()
     let name: String
     let imageName: String

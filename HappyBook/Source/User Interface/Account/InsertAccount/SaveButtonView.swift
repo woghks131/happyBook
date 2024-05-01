@@ -71,10 +71,9 @@ private extension SaveButtonView {
         
         let nextID = Store.accountSequence.next()!
         Store.lastAccountID = nextID
-        let account = Account(id: nextID, type: pickerOption, date: date, price: price, division: division.name, asset: asset, contents: contents, memo: memo)
-        store.saveData(account: account)
-        
-        print("저장된 데이터 : \(store.loadData())")
+        var account = Account(id: nextID, type: pickerOption, date: date, price: price, division: division, asset: asset, contents: contents, memo: memo)
+        store.saveData(account: &account)   //& : dailyTime을 변경해야하기 때문에
+        print("저장된 데이터 : \(store.loadData(date: date))")
         
         
         return true

@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct AccountRow: View {
+    @EnvironmentObject private var store: Store
+    var daily: DailyAccount
+    
     var body: some View {
         VStack {
             headView
@@ -18,30 +21,31 @@ struct AccountRow: View {
         }
         .padding(.bottom, 15)
     }
+        
 }
 
 private extension AccountRow {
     
     var headView: some View {
         HStack {
-            Text("21")
+            Text(daily.day)
                 .font(.headline).fontWeight(.bold)
-            Text("일요일")
+            Text(daily.week)
                 .font(.subheadline)
                 .frame(width: 50, height: 20)
                 .foregroundStyle(.white)
                 .background(.peach)
                 .clipShape(RoundedRectangle(cornerRadius: 6))
-            Text("2024.04")
+            Text(daily.yearAndMonth)
                 .font(.system(size: 12))
                 .foregroundStyle(.gray)
                 .padding(.top,3)
             Spacer()
-            Text("70,000")
+            Text(daily.totalIncomePrice)
                 .font(.headline)
                 .foregroundStyle(.blue)
             Spacer()
-            Text("413,000")
+            Text(daily.totalExpensesPrice)
                 .font(.headline)
                 .foregroundStyle(.red)
         }
@@ -50,77 +54,52 @@ private extension AccountRow {
     }
     
     var memoView: some View {
-        HStack {
-            Symbol("list.clipboard", scale: .small, color: .peach)
-            Text("제목이 있으면 제목 보여주고 제목이 없으면 내용을 보여주는 공간")
-                .font(.system(size: 10))
-                .lineLimit(1)
-            Spacer()
+        ForEach(daily.accounts, id: \.self) { account in
+            HStack {
+                Symbol("list.clipboard", scale: .small, color: .peach)
+                Text(account.memo)
+                    .font(.system(size: 10))
+                    .lineLimit(1)
+                Spacer()
+            }
+            .padding(.leading, 10)
+            .padding(.trailing, 10)
         }
-        .padding(.leading, 10)
-        .padding(.trailing, 10)
     }
     
     var accountView: some View {
         
-        VStack {
+        ForEach(daily.accounts, id: \.self) { account in
             HStack {
-                Symbol("medal", scale: .small, color: .black)
-                Text("상여")
+                Symbol(account.division.imageName, scale: .small, color: .black)
+                    .frame(width: 20)
+                Text(account.division.name)
+                    .frame(width: 80, alignment: .leading)
                     .font(.system(size: 13))
                     .foregroundStyle(.gray)
-                    .padding(.trailing, 20)
                 
                 VStack {
-                    Text("삼성카드")
+                    Text(account.asset)
                         .font(.system(size: 13))
                         .foregroundStyle(.gray)
-                    Text("오후 3:20")
+                    Text(account.dailyTime ?? "")
                         .font(.system(size: 13))
                         .foregroundStyle(.gray)
                 }
                 
                 Spacer()
                 
-                Text("70,000")
+                Text(account.price)
                     .font(.headline)
-                    .foregroundStyle(.blue)
-            }
-            .padding([.top, .bottom], 5)
-            .padding([.leading, .trailing])
-            
-            
-            
-            HStack {
-                Symbol("fork.knife", scale: .small, color: .black)
-                Text("식비")
-                    .font(.system(size: 13))
-                    .foregroundStyle(.gray)
-                    .padding(.trailing, 20)
-                
-                VStack {
-                    Text("현금")
-                        .font(.system(size: 13))
-                        .foregroundStyle(.gray)
-                    Text("오후 3:20")
-                        .font(.system(size: 13))
-                        .foregroundStyle(.gray)
-                }
-                
-                Spacer()
-                
-                Text("9,000")
-                    .font(.headline)
-                    .foregroundStyle(.blue)
+                    .foregroundStyle(account.type == "수입" ? .blue : .red)
             }
             .padding([.top, .bottom], 5)
             .padding([.leading, .trailing])
         }
-        
     }
 }
 
 #Preview {
-    AccountRow()
+    AccountRow(daily: DailyAccount(date: .now, yearAndMonth: "123", day: "", week: "'", totalIncomePrice: "", totalExpensesPrice: "", accounts: [Account(id: 1, type: "수입", date: .now, price: "3000", division: Division(name: "교통/차량", imageName: "cart"), asset: "카드", contents: "내용", memo: "")]))
         .environmentObject(Store())
 }

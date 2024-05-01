@@ -18,10 +18,9 @@ enum TabMenu : String, CaseIterable {
 struct AccountView: View {
     @EnvironmentObject private var store: Store
     
-    @State private var currentDate = Date()     //현재 년월 가져오기
     @State private var selectedPicker: TabMenu = .day   //탭바 구성 디폴트 '일일'
     @State private var showingInsertAccountView : Bool = false  //플로팅버튼
-
+    
     var body: some View {
         NavigationView {
             ZStack(alignment: .bottomTrailing) {
@@ -59,7 +58,9 @@ private extension AccountView {
     var leadingItems: some View {
         HStack(spacing:3) {
             Button(action: { 
-                currentDate = currentDate.previousMonth
+                store.currentDate = store.currentDate.previousMonth
+                store.updateDailySummaries()
+                store.loadAccountTabData(date: store.currentDate)
             }) {
                 Text("<")
                     .font(.headline)
@@ -67,11 +68,13 @@ private extension AccountView {
                 
             }
             
-            Text(currentDate.formattedYearAndMonth())
+            Text(store.currentDate.formattedYearAndMonth())
                 .font(.headline)
             
             Button(action: { 
-                currentDate = currentDate.nextMonth
+                store.currentDate = store.currentDate.nextMonth
+                store.updateDailySummaries()
+                store.loadAccountTabData(date: store.currentDate)
             }) {
                 Text(">")
                     .font(.headline)
@@ -85,15 +88,17 @@ private extension AccountView {
             
             //즐겨찾기
             Button(action: {
-                print("불러오기 : \(store.loadData())")
+                print("불러오기 : \(store.loadData(date: .now))")
                 
             }) {
-                Symbol("star", scale: .large, color: .primary)
-                    
+                Symbol("star", scale: .large, color: .primary)  
             }
             
             //검색
-            Button(action: {}) {
+            Button(action: {
+                
+                store.updateDailySummaries()
+            }) {
                 Symbol("magnifyingglass", scale: .large, color: .primary)
             }
             
@@ -106,7 +111,9 @@ private extension AccountView {
     
     var accountList: some View {
         List {
-            AccountRow()
+            ForEach(store.dailySummaries, id: \.self) { dailyAccount  in
+                AccountRow(daily: dailyAccount)
+            }
         }
         .listStyle(PlainListStyle())
         .background(Color.background)

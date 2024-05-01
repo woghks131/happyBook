@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+// 앱 내에 저장되는 가계부 데이터
+struct UserAccount {
+    let sumIncomePrice: String
+    
+    
+}
