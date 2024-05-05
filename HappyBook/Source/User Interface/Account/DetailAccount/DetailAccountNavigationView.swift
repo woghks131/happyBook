@@ -8,11 +8,26 @@
 import SwiftUI
 
 struct DetailAccountNavigationView: View {
+    
+    let title: String
+    let backButtonAction: () -> Void
+   
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Button(action: backButtonAction) {
+                Image(systemName: "arrow.left")
+                    .foregroundColor(.black)
+            }
+            .padding(.trailing, 10)
+            
+            Text(title).font(.headline)
+            
+            Spacer()
+        }
+        .padding()
     }
 }
 
 #Preview {
-    DetailAccountNavigationView()
+    InsertAccountNavigationView(title: "수입", backButtonAction: {})
 }

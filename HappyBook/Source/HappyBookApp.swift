@@ -14,11 +14,7 @@ import KakaoSDKUser
 struct HappyBookApp: App {
     
     init() {
-        //Kakao SDK 초기화
-        KakaoSDK.initSDK(appKey: "f5c557c3d0ca0adae67596aa78d23197")
-        UITableView.appearance().backgroundColor = .clear
-        UISegmentedControl.appearance().selectedSegmentTintColor = .peach
-        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
+        configureAppearance()
     }
     
     var body: some Scene {
@@ -37,5 +33,13 @@ struct HappyBookApp: App {
             
         }
     }
-
+    
+    private func configureAppearance() {
+        //Kakao SDK 초기화
+        KakaoSDK.initSDK(appKey: "f5c557c3d0ca0adae67596aa78d23197")
+        
+        UITableView.appearance().backgroundColor = .clear
+        UISegmentedControl.appearance().selectedSegmentTintColor = .peach
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
+    }
 }

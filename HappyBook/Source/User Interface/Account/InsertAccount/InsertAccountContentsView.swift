@@ -36,7 +36,7 @@ struct InsertAccountContentsView: View {
             AssetInputView(asset: $asset, pickerOption: $pickerOption, isPresented: false)
             ContentsInputView(contents: $contents, pickerOption: $pickerOption, isPresented: false)
             MemoInputView(memo: $memo, pickerOption: $pickerOption, isPresented: false)
-            SaveButtonView(pickerOption: $pickerOption, date: $date, price: $price, division: $division, asset: $asset, contents: $contents, memo: $memo, reloadFlag: .constant(false))
+            SaveButtonView(pickerOption: $pickerOption, date: $date, price: $price, division: $division, asset: $asset, contents: $contents, memo: $memo)
         }
     }
 }

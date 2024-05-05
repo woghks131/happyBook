@@ -8,11 +8,29 @@
 import SwiftUI
 
 struct MemoRow: View {
+    
+    let account: Account
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        memoInfoSection
+    }
+}
+
+private extension MemoRow {
+    var memoInfoSection: some View {
+        Section(header:
+                    HStack {
+            Text(account.dailyTime!).fontWeight(.medium)
+        })
+        {
+            Text(account.memo)
+                .frame(height: 44)
+        }
+        
+        
     }
 }
 
 #Preview {
-    MemoRow()
+    MemoRow(account: Account(id: 0, type: "", date: .now, price: "", division: Division(name: "", imageName: ""), asset: "", contents: "", memo: ""))
 }

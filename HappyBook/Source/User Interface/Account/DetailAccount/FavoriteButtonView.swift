@@ -8,11 +8,23 @@
 import SwiftUI
 
 struct FavoriteButtonView: View {
+    
+    let id: Int
+    @State var isFavorite: Bool
+    
+    @EnvironmentObject var store: Store
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Symbol(isFavorite ? "star.fill" : "star", scale: .large, color: .peach)
+            .onTapGesture {
+                withAnimation {
+                    isFavorite.toggle()
+                    store.updateFavoriteData(id: id, favorite: isFavorite)
+                }
+            }
     }
 }
 
 #Preview {
-    FavoriteButtonView()
+    FavoriteButtonView( id: 0, isFavorite: true)
 }

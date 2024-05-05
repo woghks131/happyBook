@@ -37,7 +37,7 @@ struct AccountView: View {
                     } else if (selectedPicker == .month) {
                         Text("3")
                     } else if (selectedPicker == .memo) {
-                        Text("4")
+                        MemoView()
                     }
                     
                     Spacer()
@@ -85,26 +85,9 @@ private extension AccountView {
     
     var trailingItems: some View {
         HStack {
-            
-            //즐겨찾기
-            Button(action: {
-                print("불러오기 : \(store.loadData(date: .now))")
-                
-            }) {
-                Symbol("star", scale: .large, color: .primary)  
-            }
-            
-            //검색
-            Button(action: {
-                
-                store.updateDailySummaries()
-            }) {
-                Symbol("magnifyingglass", scale: .large, color: .primary)
-            }
-            
-            //필터링
-            Button(action: {}) {
-                Symbol("slider.horizontal.3", scale: .large, color: .primary)
+            NavigationLink(destination: FavoriteView()) {
+                //즐겨찾기
+                Symbol("star", scale: .large, color: .primary)
             }
         }
     }
@@ -114,6 +97,7 @@ private extension AccountView {
             ForEach(store.dailySummaries, id: \.self) { dailyAccount  in
                 AccountRow(daily: dailyAccount)
             }
+           // .listRowBackground(Color.background)
         }
         .listStyle(PlainListStyle())
         .background(Color.background)

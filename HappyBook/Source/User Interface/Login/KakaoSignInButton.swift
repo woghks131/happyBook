@@ -11,6 +11,9 @@ import KakaoSDKAuth
 import KakaoSDKUser
 
 struct KakaoSignInButton: View {
+    
+    @State private var isLoggedIn = false
+    
     var body: some View {
         Button {
             //카카오톡 실행 가능 여부
@@ -20,11 +23,7 @@ struct KakaoSignInButton: View {
                         print(error)
                     }
                     
-                    MainTabView()
-                        .environmentObject(Store())
-//                    if let oauthToken = oauthToken {
-//                        print("회원가입 API CALL")
-//                    }
+                    isLoggedIn = true
                 }
             } else {
                 UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
@@ -32,11 +31,7 @@ struct KakaoSignInButton: View {
                         print(error)
                     }
                     
-                    MainTabView()
-                        .environmentObject(Store())
-//                    if let oauthToken = oauthToken {
-//                        print("kakao success !")
-//                    }
+                    isLoggedIn = true
                 }
             }
         } label: {
@@ -45,6 +40,10 @@ struct KakaoSignInButton: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: UIScreen.main.bounds.width * 0.8)
         }
+        .fullScreenCover(isPresented: $isLoggedIn, content: {
+            MainTabView()
+                .environmentObject(Store())
+        })
     }
 }
 

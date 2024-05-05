@@ -15,7 +15,6 @@ struct SaveButtonView: View {
     @Binding var asset: String
     @Binding var contents: String
     @Binding var memo: String
-    @Binding var reloadFlag: Bool
 
     @State private var showingAlert = false
     @State private var alertItem: String = ""
@@ -81,5 +80,5 @@ private extension SaveButtonView {
 }
 
 #Preview {
-    SaveButtonView(pickerOption: .constant("수입"), date: .constant(.now), price: .constant(""), division: .constant(Division(name: "", imageName: "")), asset: .constant(""), contents: .constant(""), memo: .constant(""), reloadFlag: .constant(false))
+    SaveButtonView(pickerOption: .constant("수입"), date: .constant(.now), price: .constant(""), division: .constant(Division(name: "", imageName: "")), asset: .constant(""), contents: .constant(""), memo: .constant(""))
 }

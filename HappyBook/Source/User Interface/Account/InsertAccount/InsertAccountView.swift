@@ -9,7 +9,6 @@ import SwiftUI
 
 struct InsertAccountView: View {
     @Environment(\.presentationMode) var presentationMode
-    @State private var reloadFlag = false
     
     /*
      * @State 가계부 데이터 저장값
@@ -33,12 +32,7 @@ struct InsertAccountView: View {
             contents: $contents,
             memo: $memo
         )
-        .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
-            if reloadFlag {
-                // Reload logic here
-                reloadFlag = false // Reset reload flag
-            }
-        }
+
         
         Spacer()
     }

@@ -10,6 +10,7 @@ import SwiftUI
 struct AccountRow: View {
     @EnvironmentObject private var store: Store
     var daily: DailyAccount
+    @State private var detailAccount: Account?
     
     var body: some View {
         VStack {
@@ -18,6 +19,9 @@ struct AccountRow: View {
             memoView
             DividerView()
             accountView
+                .sheet(item: $detailAccount) { da in
+                    DetailAccountView(account: da)
+                }
         }
         .padding(.bottom, 15)
     }
@@ -55,15 +59,17 @@ private extension AccountRow {
     
     var memoView: some View {
         ForEach(daily.accounts, id: \.self) { account in
-            HStack {
-                Symbol("list.clipboard", scale: .small, color: .peach)
-                Text(account.memo)
-                    .font(.system(size: 10))
-                    .lineLimit(1)
-                Spacer()
+            if !account.memo.isEmpty {
+                HStack {
+                    Symbol("list.clipboard", scale: .small, color: .peach)
+                    Text(account.memo)
+                        .font(.system(size: 10))
+                        .lineLimit(1)
+                    Spacer()
+                }
+                .padding(.leading, 10)
+                .padding(.trailing, 10)
             }
-            .padding(.leading, 10)
-            .padding(.trailing, 10)
         }
     }
     
@@ -93,8 +99,12 @@ private extension AccountRow {
                     .font(.headline)
                     .foregroundStyle(account.type == "수입" ? .blue : .red)
             }
+            .onTapGesture {
+                detailAccount = account
+            }
             .padding([.top, .bottom], 5)
             .padding([.leading, .trailing])
+            
         }
     }
 }
