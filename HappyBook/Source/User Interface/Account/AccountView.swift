@@ -52,7 +52,7 @@ struct AccountView: View {
 
 private extension AccountView {
     
-    var leadingItems: some View {
+    private var leadingItems: some View {
         HStack(spacing:3) {
             Button(action: { 
                 store.currentDate = selectedPicker == .month ? store.currentDate.previousYear : store.currentDate.previousMonth
@@ -80,7 +80,7 @@ private extension AccountView {
         }
     }
     
-    var trailingItems: some View {
+    private var trailingItems: some View {
         HStack {
             NavigationLink(destination: FavoriteView()) {
                 //즐겨찾기
@@ -89,7 +89,7 @@ private extension AccountView {
         }
     }
     
-    var accountList: some View {
+    private var accountList: some View {
         List {
             ForEach(store.dailySummaries, id: \.self) { dailyAccount  in
                 AccountRow(daily: dailyAccount)
@@ -100,7 +100,7 @@ private extension AccountView {
         .background(Color.background)
     }
     
-    var floatingButton: some View {
+    private var floatingButton: some View {
         Button(action: {
             showingInsertAccountView = true
         }) {

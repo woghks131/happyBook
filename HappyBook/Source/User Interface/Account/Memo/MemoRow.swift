@@ -17,7 +17,7 @@ struct MemoRow: View {
 }
 
 private extension MemoRow {
-    var memoInfoSection: some View {
+    private var memoInfoSection: some View {
         Section(header:
                     HStack {
             Text(account.dailyTime!).fontWeight(.medium)

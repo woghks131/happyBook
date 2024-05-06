@@ -29,7 +29,7 @@ struct FavoriteView: View {
 
 private extension FavoriteView {
     
-    var emptyFavoriteList: some View {
+    private var emptyFavoriteList: some View {
         VStack(spacing: 25) {
           Image("box")
             .renderingMode(.template)
@@ -42,7 +42,7 @@ private extension FavoriteView {
         .background(Color.background)
     }
     
-    var favoriteList: some View {
+    private var favoriteList: some View {
         List {
             ForEach(store.favoritedAccounts) {
                 FavoriteRow(account: $0)
@@ -55,7 +55,7 @@ private extension FavoriteView {
         }
     }
     
-    var backButton: some View {
+    private var backButton: some View {
         Button(action: {
             dismiss()
         }, label: {
@@ -63,7 +63,7 @@ private extension FavoriteView {
         })
     }
     
-    var editButton: some View {
+    private var editButton: some View {
         !store.favoritedAccounts.isEmpty
         ? AnyView(EditButton())
         : AnyView(EmptyView())

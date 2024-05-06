@@ -20,7 +20,7 @@ struct MonthlyView: View {
 
 extension MonthlyView {
     
-    var monthlyRow: some View {
+    private var monthlyRow: some View {
         
         ForEach(store.monthlySummaries, id: \.self) { monthly in
             HStack {

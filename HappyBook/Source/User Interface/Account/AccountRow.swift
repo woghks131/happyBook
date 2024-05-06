@@ -30,7 +30,7 @@ struct AccountRow: View {
 
 private extension AccountRow {
     
-    var headView: some View {
+    private var headView: some View {
         HStack {
             Text(daily.day)
                 .font(.headline).fontWeight(.bold)
@@ -57,7 +57,7 @@ private extension AccountRow {
         
     }
     
-    var memoView: some View {
+    private var memoView: some View {
         ForEach(daily.accounts, id: \.self) { account in
             if !account.memo.isEmpty {
                 HStack {
@@ -73,7 +73,7 @@ private extension AccountRow {
         }
     }
     
-    var accountView: some View {
+    private var accountView: some View {
         
         ForEach(daily.accounts, id: \.self) { account in
             HStack {

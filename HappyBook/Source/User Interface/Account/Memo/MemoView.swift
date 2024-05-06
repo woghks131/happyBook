@@ -23,8 +23,8 @@ struct MemoView: View {
     }
 }
 
-extension MemoView {
-    var emptyMemoList: some View {
+private extension MemoView {
+    private var emptyMemoList: some View {
         VStack(spacing: 25) {
           Image("box")
             .renderingMode(.template)
@@ -37,7 +37,7 @@ extension MemoView {
         .background(Color.background)
     }
     
-    var memoList: some View {
+    private var memoList: some View {
         Form {
             ForEach(store.memoList) {
                 MemoRow(account: $0)
@@ -50,7 +50,7 @@ extension MemoView {
         }
     }
     
-    var backButton: some View {
+    private var backButton: some View {
         Button(action: {
             dismiss()
         }, label: {
@@ -58,7 +58,7 @@ extension MemoView {
         })
     }
     
-    var editButton: some View {
+    private var editButton: some View {
         !store.memoList.isEmpty
         ? AnyView(EditButton())
         : AnyView(EmptyView())
