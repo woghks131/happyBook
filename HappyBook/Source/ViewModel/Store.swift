@@ -7,9 +7,9 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
 final class Store: ObservableObject {
-    
     
     @Published var divisions: [Division]
     @Published var tabInfo: TabInfo
@@ -23,6 +23,7 @@ final class Store: ObservableObject {
     @Published var assets: Set<Asset> = []
     @Published var currentDate = Date()     //현재 년월 가져오기
     
+    private var cancellables = Set<AnyCancellable>()
 
     static var accountSequence = sequence(first: lastAccountID + 1) { $0 &+ 1 }
     static var lastAccountID: Int {
@@ -51,13 +52,27 @@ final class Store: ObservableObject {
         if assets.isEmpty {
             self.assets = initAssets
         }
-        self.accounts = loadData(date: currentDate)
+        
+        
+        
+        //currentDate에 대한 변경을 구독 하고 변경이 감지되면 sink
+        $currentDate
+            .sink { [weak self] date in
+                self?.accounts = self?.loadData(date: date) ?? []
+                self?.loadAccountTabData(date: date)
+                self?.updateDailySummaries()
+                self?.updateMonthlySummaries()
+            }
+            .store(in: &cancellables)
+        
+        
+//        self.accounts = loadData(date: currentDate)
         self.favoritedAccounts = loadFavoriteAccount()
         self.memoList = loadMemoList()
         
-        loadAccountTabData(date: currentDate)
-        updateDailySummaries()
-        updateMonthlySummaries()
+//        loadAccountTabData(date: currentDate)
+//        updateDailySummaries()
+//        updateMonthlySummaries()
     }
 }
 
@@ -93,12 +108,18 @@ extension Store {
      */
     func saveData(account: inout Account) {
         //inout: dailyTime을 변경해야하기 때문에
-        
         account.dailyTime = Date().getTimeString(from: account.date)
-        var accounts = loadData(date: nil)
-        accounts.append(account)
-
-        saveAccounts(accounts)
+        
+        Just(account)
+            .map { [weak self] account in
+                var accounts = self?.loadData(date: nil) ?? []
+                accounts.append(account)
+                return accounts
+            }
+            .sink { [weak self] accounts in
+                self?.saveAccounts(accounts)
+            }
+            .store(in: &cancellables)
     }
  
     /*
@@ -106,27 +127,41 @@ extension Store {
      */
     func updateData(account: inout Account) {
         //inout: dailyTime을 변경해야하기 때문에
-        
         account.dailyTime = Date().getTimeString(from: account.date)
         
-        var accounts = loadData(date: nil)
-        
-        // 데이터 변경 작업
-        if let index = accounts.firstIndex(where: { $0.id == account.id }) {
-            accounts[index] = account
-        }
-    
-        saveAccounts(accounts)
+        Just(account)
+            .map { [weak self] account in
+                var accounts = self?.loadData(date: nil) ?? []
+                
+                // 데이터 변경 작업
+                if let index = accounts.firstIndex(where: { $0.id == account.id }) {
+                    accounts[index] = account
+                }
+                
+                return accounts
+            }
+            .sink { [weak self] accounts in
+                self?.saveAccounts(accounts)
+            }
+            .store(in: &cancellables)
     }
     
     /*
      * 가계부 삭제
      */
     func deleteData(id: Int) {
-        var accounts = loadData(date: nil)
-        accounts = accounts.filter { $0.id != id }
         
-        saveAccounts(accounts)
+        Just(id)
+            .map { [weak self] id in
+                var accounts = self?.loadData(date: nil) ?? []
+                accounts = accounts.filter { $0.id != id }
+                
+                return accounts
+            }
+            .sink { [weak self] accounts in
+                self?.saveAccounts(accounts)
+            }
+            .store(in: &cancellables)
     }
     
     // MARK: - 즐겨찾기 관리
@@ -153,14 +188,18 @@ extension Store {
      * 즐겨찾기 수정
      */
     func updateFavoriteData(id: Int, favorite: Bool) {
-        var accounts = loadData(date: nil)
         
-        // 데이터 변경 작업
-        if let index = accounts.firstIndex(where: { $0.id == id }) {
-            accounts[index].favorite = favorite
-        }
-        
-        saveAccounts(accounts)
+        Just((id, favorite))
+            .sink { [weak self] id, favorite in
+                var accounts = self?.loadData(date: nil) ?? []
+                // 데이터 변경 작업
+                if let index = accounts.firstIndex(where: { $0.id == id }) {
+                    accounts[index].favorite = favorite
+                }
+                
+                self?.saveAccounts(accounts)
+            }
+            .store(in: &cancellables)
     }
 
     /*
@@ -195,14 +234,19 @@ extension Store {
      * 메모 수정
      */
     func updateMemoData(id: Int, memo: String) {
-        var accounts = loadData(date: nil)
         
-        // 데이터 변경 작업
-        if let index = accounts.firstIndex(where: { $0.id == id }) {
-            accounts[index].memo = memo
-        }
-        
-        saveAccounts(accounts)
+        Just((id, memo))
+            .sink { [weak self] id, memo in
+                var accounts = self?.loadData(date: nil) ?? []
+                
+                // 데이터 변경 작업
+                if let index = accounts.firstIndex(where: { $0.id == id }) {
+                    accounts[index].memo = memo
+                }
+                
+                self?.saveAccounts(accounts)
+            }
+            .store(in: &cancellables)
     }
     
     /*
@@ -220,32 +264,38 @@ extension Store {
      * 가계부 Row 보여주기 위한 함수
      */
     func updateDailySummaries() {
-        accounts = loadData(date: currentDate)
-        
-        let groupedAccount = Dictionary(grouping: accounts) { account in
-            Calendar.current.startOfDay(for: account.date)
-        }
-        
-        self.dailySummaries = groupedAccount.map{ key, accounts in
-            
-            let yearAndMonth = String(Date().getYear(from: key)) + "." + String(Date().getMonth(from: key))
-            let day = String(Date().getDay(from: key))
-            let week = Date().getDayOfWeek(from: key)
+        Just(currentDate)
+            .map { [weak self] date -> [DailyAccount] in
+                var accounts = self?.loadData(date: date) ?? []
+                let groupedAccount = Dictionary(grouping: accounts) { account in
+                    Calendar.current.startOfDay(for: account.date)
+                }
                 
-            let dailyIncomePrice = accounts.reduce(0) { result, account in
-                if account.type == "수입", let price = Int(account.price.replacingOccurrences(of: ",", with: "").replacingOccurrences(of: "원", with: "")) { return result + price }
-                return result
-            }
-            
-            let dailyExpensesPrice = accounts.reduce(0) { result, account in
-                if account.type == "지출", let price = Int(account.price.replacingOccurrences(of: ",", with: "").replacingOccurrences(of: "원", with: "")) { return result + price }
-                return result
-            }
+                return groupedAccount.map{ key, accounts in
+                    
+                    let yearAndMonth = String(Date().getYear(from: key)) + "." + String(Date().getMonth(from: key))
+                    let day = String(Date().getDay(from: key))
+                    let week = Date().getDayOfWeek(from: key)
+                        
+                    let dailyIncomePrice = accounts.reduce(0) { result, account in
+                        if account.type == "수입", let price = Int(account.price.replacingOccurrences(of: ",", with: "").replacingOccurrences(of: "원", with: "")) { return result + price }
+                        return result
+                    }
+                    
+                    let dailyExpensesPrice = accounts.reduce(0) { result, account in
+                        if account.type == "지출", let price = Int(account.price.replacingOccurrences(of: ",", with: "").replacingOccurrences(of: "원", with: "")) { return result + price }
+                        return result
+                    }
 
-            return DailyAccount(date: key, yearAndMonth: yearAndMonth, day: day, week: week, totalIncomePrice: formatPrice(dailyIncomePrice), totalExpensesPrice: formatPrice(dailyExpensesPrice), accounts: accounts)
-        }
-        
-        dailySummaries.sort{ $0.date > $1.date }
+                    return DailyAccount(date: key, yearAndMonth: yearAndMonth, day: day, week: week, totalIncomePrice: self?.formatPrice(dailyIncomePrice) ?? "0원", totalExpensesPrice: self?.formatPrice(dailyExpensesPrice) ?? "0원", accounts: accounts)
+                }
+                
+            }
+            .sink { [weak self] dailySummaries in
+                self?.dailySummaries = dailySummaries
+                self?.dailySummaries.sort{ $0.date > $1.date }
+            }
+            .store(in: &cancellables)
     }
     
     /*
@@ -290,34 +340,39 @@ extension Store {
      * 가계부 탭 메뉴에 데이터 보여주기 위한 함수
      */
     func loadAccountTabData(date: Date) {
-        var incomePrice: Int = 0
-        var expensesPrice: Int = 0
-
-        guard let data = UserDefaults.standard.data(forKey: "UserAccounts") else { return }
         
-        do {
-            var accounts = try JSONDecoder().decode([Account].self, from: data)
-            accounts.sort { $0.id > $1.id }
-            
-            for account in accounts {
-                if date.formattedYearAndMonth() == account.date.formattedYearAndMonth() {
-                    if account.type == "수입" {
-                        let cleanedPrice = account.price.replacingOccurrences(of: ",", with: "").replacingOccurrences(of: "원", with: "")
-                        if let price = Int(cleanedPrice) { incomePrice += price }
+        Just(date)
+            .sink { [weak self] date in
+                var incomePrice: Int = 0
+                var expensesPrice: Int = 0
+
+                guard let data = UserDefaults.standard.data(forKey: "UserAccounts") else { return }
+                
+                do {
+                    var accounts = try JSONDecoder().decode([Account].self, from: data)
+                    accounts.sort { $0.id > $1.id }
+                    
+                    for account in accounts {
+                        if date.formattedYearAndMonth() == account.date.formattedYearAndMonth() {
+                            if account.type == "수입" {
+                                let cleanedPrice = account.price.replacingOccurrences(of: ",", with: "").replacingOccurrences(of: "원", with: "")
+                                if let price = Int(cleanedPrice) { incomePrice += price }
+                            }
+                            if account.type == "지출" {
+                                let cleanedPrice = account.price.replacingOccurrences(of: ",", with: "").replacingOccurrences(of: "원", with: "")
+                                if let price = Int(cleanedPrice) { expensesPrice += price }
+                            }
+                        }
                     }
-                    if account.type == "지출" {
-                        let cleanedPrice = account.price.replacingOccurrences(of: ",", with: "").replacingOccurrences(of: "원", with: "")
-                        if let price = Int(cleanedPrice) { expensesPrice += price }
-                    }
+                    
+                    self?.tabInfo.incomePrice = self?.formatPrice(incomePrice) ?? "0원"
+                    self?.tabInfo.expensesPrice = self?.formatPrice(expensesPrice) ?? "0원"
+                    self?.tabInfo.sumPrice = self?.formatPrice(incomePrice - expensesPrice) ?? "0원"
+                } catch {
+                    print("Error decoding assets: \(error)")
                 }
             }
-            
-            tabInfo.incomePrice = formatPrice(incomePrice)
-            tabInfo.expensesPrice = formatPrice(expensesPrice)
-            tabInfo.sumPrice = formatPrice(incomePrice - expensesPrice)
-        } catch {
-            print("Error decoding assets: \(error)")
-        }
+            .store(in: &cancellables)
     }
 
     // MARK: - Helper Functions
