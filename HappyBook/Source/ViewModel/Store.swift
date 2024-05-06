@@ -18,6 +18,8 @@ final class Store: ObservableObject {
     @Published var memoList: [Account]
     
     @Published var dailySummaries: [DailyAccount] = []
+    @Published var monthlySummaries: [MonthlyAccount] = []
+    
     @Published var assets: Set<Asset> = []
     @Published var currentDate = Date()     //현재 년월 가져오기
     
@@ -55,6 +57,7 @@ final class Store: ObservableObject {
         
         loadAccountTabData(date: currentDate)
         updateDailySummaries()
+        updateMonthlySummaries()
     }
 }
 
@@ -246,6 +249,44 @@ extension Store {
     }
     
     /*
+     * 월별 Row 보여주기 위한 함수
+     */
+    func updateMonthlySummaries() {
+        accounts = loadData(date: nil)
+        
+        let groupedAccount = Dictionary(grouping: accounts) { account in
+            Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: account.date)) ?? Date()
+        }
+        
+        self.monthlySummaries = groupedAccount.compactMap{ key, accounts in
+            
+            guard Date().getYear(from: currentDate) == Calendar.current.component(.year, from: key) else {
+                return nil
+            }
+            
+            let year = key.formattedYear()
+            let month = String(Date().getMonth(from: key)) + "월"
+                        
+            var monthlyIncomePrice = 0
+            var monthlyExpensesPrice = 0
+            
+            monthlyIncomePrice = accounts.reduce(0) { result, account in
+                if account.type == "수입", let price = Int(account.price.replacingOccurrences(of: ",", with: "").replacingOccurrences(of: "원", with: "")) { return result + price }
+                return result
+            }
+            
+            monthlyExpensesPrice = accounts.reduce(0) { result, account in
+                if account.type == "지출", let price = Int(account.price.replacingOccurrences(of: ",", with: "").replacingOccurrences(of: "원", with: "")) { return result + price }
+                return result
+            }
+            
+            return MonthlyAccount(date:key, year: year, month: month, incomePrice: formatPrice(monthlyIncomePrice), expensesPrice: formatPrice(monthlyExpensesPrice), sumPirce: formatPrice(monthlyIncomePrice - monthlyExpensesPrice))
+        }
+        
+        monthlySummaries.sort{ $0.month > $1.month }
+    }
+    
+    /*
      * 가계부 탭 메뉴에 데이터 보여주기 위한 함수
      */
     func loadAccountTabData(date: Date) {
@@ -290,6 +331,7 @@ extension Store {
             UserDefaults.standard.setValue(data, forKey: "UserAccounts")
             loadAccountTabData(date: currentDate)
             updateDailySummaries()
+            updateMonthlySummaries()
             memoList = loadMemoList()
             favoritedAccounts = loadFavoriteAccount()
         } catch {
