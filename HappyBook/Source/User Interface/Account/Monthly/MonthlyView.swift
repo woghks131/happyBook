@@ -8,9 +8,42 @@
 import SwiftUI
 
 struct MonthlyView: View {
+    
+    @EnvironmentObject var store: Store
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            monthlyRow
+        }
     }
+}
+
+extension MonthlyView {
+    
+    var monthlyRow: some View {
+        
+        ForEach(store.monthlySummaries, id: \.self) { monthly in
+            HStack {
+                Text(monthly.month).fontWeight(.bold)
+                Spacer()
+                Text(monthly.incomePrice)
+                    .font(.headline)
+                    .foregroundStyle(.blue)
+                Spacer()
+                VStack {
+                    Text(monthly.expensesPrice)
+                        .font(.headline)
+                        .foregroundStyle(.red)
+                    Text(monthly.sumPirce)
+                        .font(.subheadline)
+                        .foregroundStyle(.gray)
+                }
+            }
+            .padding()
+        }
+        
+    }
+    
 }
 
 #Preview {

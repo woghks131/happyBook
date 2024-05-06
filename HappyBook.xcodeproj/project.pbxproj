@@ -15,16 +15,11 @@
 		4ED36C362BD36CA000791861 /* HappyBookUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C352BD36CA000791861 /* HappyBookUITestsLaunchTests.swift */; };
 		4ED36C4A2BD37FF700791861 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C492BD37FF700791861 /* ColorExtension.swift */; };
 		4ED36C4F2BD3869500791861 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C4E2BD3869500791861 /* LoginView.swift */; };
-		4ED36C512BD386D100791861 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C502BD386D100791861 /* MainTabView.swift */; };
 		4ED36C5B2BD3925500791861 /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 4ED36C5A2BD3925500791861 /* KakaoSDK */; };
 		4ED36C5D2BD3963700791861 /* KakaoSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C5C2BD3963700791861 /* KakaoSignInButton.swift */; };
 		4ED36C5F2BD41E9A00791861 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C5E2BD41E9A00791861 /* AccountView.swift */; };
-		4ED36C612BD41EA400791861 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C602BD41EA400791861 /* StatisticsView.swift */; };
-		4ED36C632BD41EB000791861 /* AssetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C622BD41EB000791861 /* AssetView.swift */; };
-		4ED36C652BD41EB600791861 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C642BD41EB600791861 /* MoreView.swift */; };
 		4ED36C682BD41FF200791861 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C672BD41FF200791861 /* Symbol.swift */; };
 		4ED36C6A2BD4E91900791861 /* AccountRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C692BD4E91900791861 /* AccountRow.swift */; };
-		4ED36C6F2BD530C200791861 /* CalendarPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C6E2BD530C200791861 /* CalendarPopup.swift */; };
 		4ED36C732BD69D8100791861 /* InsertAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C722BD69D8100791861 /* InsertAccountView.swift */; };
 		4ED36C772BD7ECE400791861 /* KeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C762BD7ECE400791861 /* KeyboardExtension.swift */; };
 		4ED36C792BDA858E00791861 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36C782BDA858E00791861 /* Account.swift */; };
@@ -51,7 +46,6 @@
 		4ED36CA92BDD119300791861 /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36CA82BDD119300791861 /* DividerView.swift */; };
 		4ED36CAB2BDD130200791861 /* AccountFloatingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36CAA2BDD130200791861 /* AccountFloatingButtonView.swift */; };
 		4ED36CAD2BDD2F9600791861 /* TabInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36CAC2BDD2F9600791861 /* TabInfo.swift */; };
-		4ED36CAF2BDFB86F00791861 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36CAE2BDFB86F00791861 /* UserAccount.swift */; };
 		4ED36CB12BDFC31800791861 /* DailyAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36CB02BDFC31800791861 /* DailyAccount.swift */; };
 		4ED36CB42BE21F9400791861 /* DetailAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED36CB32BE21F9400791861 /* DetailAccountView.swift */; };
 		4EDB68212BE231150020FD29 /* DetailAccountNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDB68202BE231150020FD29 /* DetailAccountNavigationView.swift */; };
@@ -63,6 +57,8 @@
 		4EDB682E2BE501E40020FD29 /* FavoriteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDB682D2BE501E40020FD29 /* FavoriteRow.swift */; };
 		4EDB68312BE611D20020FD29 /* MemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDB68302BE611D20020FD29 /* MemoView.swift */; };
 		4EDB68372BE615140020FD29 /* MemoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDB68362BE615140020FD29 /* MemoRow.swift */; };
+		4EDB683A2BE76A750020FD29 /* MonthlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDB68392BE76A750020FD29 /* MonthlyView.swift */; };
+		4EDB683C2BE770450020FD29 /* MonthlyAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDB683B2BE770450020FD29 /* MonthlyAccount.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,15 +91,10 @@
 		4ED36C492BD37FF700791861 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		4ED36C4B2BD3822F00791861 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4ED36C4E2BD3869500791861 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		4ED36C502BD386D100791861 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		4ED36C5C2BD3963700791861 /* KakaoSignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoSignInButton.swift; sourceTree = "<group>"; };
 		4ED36C5E2BD41E9A00791861 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
-		4ED36C602BD41EA400791861 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
-		4ED36C622BD41EB000791861 /* AssetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetView.swift; sourceTree = "<group>"; };
-		4ED36C642BD41EB600791861 /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
 		4ED36C672BD41FF200791861 /* Symbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
 		4ED36C692BD4E91900791861 /* AccountRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRow.swift; sourceTree = "<group>"; };
-		4ED36C6E2BD530C200791861 /* CalendarPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPopup.swift; sourceTree = "<group>"; };
 		4ED36C722BD69D8100791861 /* InsertAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertAccountView.swift; sourceTree = "<group>"; };
 		4ED36C762BD7ECE400791861 /* KeyboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardExtension.swift; sourceTree = "<group>"; };
 		4ED36C782BDA858E00791861 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
@@ -130,7 +121,6 @@
 		4ED36CA82BDD119300791861 /* DividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
 		4ED36CAA2BDD130200791861 /* AccountFloatingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountFloatingButtonView.swift; sourceTree = "<group>"; };
 		4ED36CAC2BDD2F9600791861 /* TabInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabInfo.swift; sourceTree = "<group>"; };
-		4ED36CAE2BDFB86F00791861 /* UserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		4ED36CB02BDFC31800791861 /* DailyAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyAccount.swift; sourceTree = "<group>"; };
 		4ED36CB32BE21F9400791861 /* DetailAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAccountView.swift; sourceTree = "<group>"; };
 		4EDB68202BE231150020FD29 /* DetailAccountNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAccountNavigationView.swift; sourceTree = "<group>"; };
@@ -142,6 +132,8 @@
 		4EDB682D2BE501E40020FD29 /* FavoriteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRow.swift; sourceTree = "<group>"; };
 		4EDB68302BE611D20020FD29 /* MemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoView.swift; sourceTree = "<group>"; };
 		4EDB68362BE615140020FD29 /* MemoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoRow.swift; sourceTree = "<group>"; };
+		4EDB68392BE76A750020FD29 /* MonthlyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyView.swift; sourceTree = "<group>"; };
+		4EDB683B2BE770450020FD29 /* MonthlyAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyAccount.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +233,7 @@
 				4ED36C182BD36C9E00791861 /* HappyBookApp.swift */,
 				4ED36C452BD37C0100791861 /* User Interface */,
 				4ED36C462BD37C0800791861 /* Model */,
+				4EDB683D2BE795690020FD29 /* ViewModel */,
 				4ED36C472BD37C2900791861 /* Utils */,
 			);
 			path = Source;
@@ -249,12 +242,8 @@
 		4ED36C452BD37C0100791861 /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
-				4ED36C502BD386D100791861 /* MainTabView.swift */,
 				4ED36C4D2BD3866200791861 /* Login */,
 				4ED36C522BD3876B00791861 /* Account */,
-				4ED36C532BD3877600791861 /* Statistics */,
-				4ED36C542BD3878B00791861 /* Asset */,
-				4ED36C552BD3879600791861 /* More */,
 			);
 			path = "User Interface";
 			sourceTree = "<group>";
@@ -264,11 +253,10 @@
 			children = (
 				4ED36C782BDA858E00791861 /* Account.swift */,
 				4ED36CB02BDFC31800791861 /* DailyAccount.swift */,
+				4EDB683B2BE770450020FD29 /* MonthlyAccount.swift */,
 				4ED36C7F2BDA89C100791861 /* Asset.swift */,
 				4ED36C812BDA96E900791861 /* Division.swift */,
-				4ED36C832BDA998B00791861 /* Store.swift */,
 				4ED36CAC2BDD2F9600791861 /* TabInfo.swift */,
-				4ED36CAE2BDFB86F00791861 /* UserAccount.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -276,7 +264,6 @@
 		4ED36C472BD37C2900791861 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				4ED36C6D2BD530B700791861 /* ViewModifier */,
 				4ED36C662BD41FE400791861 /* CustomView */,
 				4ED36C482BD37FE100791861 /* Extension */,
 			);
@@ -314,6 +301,7 @@
 		4ED36C522BD3876B00791861 /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				4EDB68382BE76A600020FD29 /* Monthly */,
 				4EDB682F2BE611BB0020FD29 /* Memo */,
 				4EDB682A2BE4F50B0020FD29 /* FavoriteView */,
 				4ED36C5E2BD41E9A00791861 /* AccountView.swift */,
@@ -326,30 +314,6 @@
 			path = Account;
 			sourceTree = "<group>";
 		};
-		4ED36C532BD3877600791861 /* Statistics */ = {
-			isa = PBXGroup;
-			children = (
-				4ED36C602BD41EA400791861 /* StatisticsView.swift */,
-			);
-			path = Statistics;
-			sourceTree = "<group>";
-		};
-		4ED36C542BD3878B00791861 /* Asset */ = {
-			isa = PBXGroup;
-			children = (
-				4ED36C622BD41EB000791861 /* AssetView.swift */,
-			);
-			path = Asset;
-			sourceTree = "<group>";
-		};
-		4ED36C552BD3879600791861 /* More */ = {
-			isa = PBXGroup;
-			children = (
-				4ED36C642BD41EB600791861 /* MoreView.swift */,
-			);
-			path = More;
-			sourceTree = "<group>";
-		};
 		4ED36C662BD41FE400791861 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,14 +321,6 @@
 				4ED36CA82BDD119300791861 /* DividerView.swift */,
 			);
 			path = CustomView;
-			sourceTree = "<group>";
-		};
-		4ED36C6D2BD530B700791861 /* ViewModifier */ = {
-			isa = PBXGroup;
-			children = (
-				4ED36C6E2BD530C200791861 /* CalendarPopup.swift */,
-			);
-			path = ViewModifier;
 			sourceTree = "<group>";
 		};
 		4ED36C872BDBE6D500791861 /* InsertAccount */ = {
@@ -417,6 +373,22 @@
 				4EDB68362BE615140020FD29 /* MemoRow.swift */,
 			);
 			path = Memo;
+			sourceTree = "<group>";
+		};
+		4EDB68382BE76A600020FD29 /* Monthly */ = {
+			isa = PBXGroup;
+			children = (
+				4EDB68392BE76A750020FD29 /* MonthlyView.swift */,
+			);
+			path = Monthly;
+			sourceTree = "<group>";
+		};
+		4EDB683D2BE795690020FD29 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4ED36C832BDA998B00791861 /* Store.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -558,7 +530,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4ED36C5F2BD41E9A00791861 /* AccountView.swift in Sources */,
-				4ED36C6F2BD530C200791861 /* CalendarPopup.swift in Sources */,
 				4EDB682E2BE501E40020FD29 /* FavoriteRow.swift in Sources */,
 				4EDB68272BE248EE0020FD29 /* FavoriteButtonView.swift in Sources */,
 				4ED36C682BD41FF200791861 /* Symbol.swift in Sources */,
@@ -571,7 +542,6 @@
 				4ED36C822BDA96E900791861 /* Division.swift in Sources */,
 				4ED36CA92BDD119300791861 /* DividerView.swift in Sources */,
 				4ED36CAB2BDD130200791861 /* AccountFloatingButtonView.swift in Sources */,
-				4ED36C652BD41EB600791861 /* MoreView.swift in Sources */,
 				4ED36C4A2BD37FF700791861 /* ColorExtension.swift in Sources */,
 				4EDB68372BE615140020FD29 /* MemoRow.swift in Sources */,
 				4ED36C792BDA858E00791861 /* Account.swift in Sources */,
@@ -579,18 +549,18 @@
 				4ED36CA52BDD0F5800791861 /* AccountTabMenuView.swift in Sources */,
 				4ED36C4F2BD3869500791861 /* LoginView.swift in Sources */,
 				4ED36CAD2BDD2F9600791861 /* TabInfo.swift in Sources */,
+				4EDB683C2BE770450020FD29 /* MonthlyAccount.swift in Sources */,
 				4EDB68232BE2312F0020FD29 /* DetailAccountContentsView.swift in Sources */,
 				4ED36C972BDBF83E00791861 /* AssetInputView.swift in Sources */,
 				4EDB682C2BE4F51B0020FD29 /* FavoriteView.swift in Sources */,
 				4ED36C8F2BDBF34500791861 /* PriceInputView.swift in Sources */,
 				4ED36C932BDBF66900791861 /* DivisionModalView.swift in Sources */,
 				4ED36C912BDBF5E700791861 /* DivisionInputView.swift in Sources */,
-				4ED36C612BD41EA400791861 /* StatisticsView.swift in Sources */,
 				4ED36CB12BDFC31800791861 /* DailyAccount.swift in Sources */,
 				4ED36C952BDBF6A700791861 /* DIvisionCategoryButton.swift in Sources */,
-				4ED36CAF2BDFB86F00791861 /* UserAccount.swift in Sources */,
 				4EDB68292BE248F70020FD29 /* DeleteButtonView.swift in Sources */,
 				4ED36C732BD69D8100791861 /* InsertAccountView.swift in Sources */,
+				4EDB683A2BE76A750020FD29 /* MonthlyView.swift in Sources */,
 				4ED36CA12BDBFA5000791861 /* SaveButtonView.swift in Sources */,
 				4EDB68312BE611D20020FD29 /* MemoView.swift in Sources */,
 				4EDB68252BE248E40020FD29 /* ModifyButtonView.swift in Sources */,
@@ -600,10 +570,8 @@
 				4EDB68212BE231150020FD29 /* DetailAccountNavigationView.swift in Sources */,
 				4ED36C892BDBEB0700791861 /* InsertAccountNavigationView.swift in Sources */,
 				4ED36C6A2BD4E91900791861 /* AccountRow.swift in Sources */,
-				4ED36C632BD41EB000791861 /* AssetView.swift in Sources */,
 				4ED36CA32BDD0CC500791861 /* DateExtension.swift in Sources */,
 				4ED36C5D2BD3963700791861 /* KakaoSignInButton.swift in Sources */,
-				4ED36C512BD386D100791861 /* MainTabView.swift in Sources */,
 				4ED36C9D2BDBF97D00791861 /* ContentsInputView.swift in Sources */,
 				4ED36C9F2BDBF9ED00791861 /* MemoInputView.swift in Sources */,
 			);

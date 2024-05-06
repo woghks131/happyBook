@@ -41,7 +41,7 @@ struct KakaoSignInButton: View {
                 .frame(width: UIScreen.main.bounds.width * 0.8)
         }
         .fullScreenCover(isPresented: $isLoggedIn, content: {
-            MainTabView()
+            AccountView()
                 .environmentObject(Store())
         })
     }

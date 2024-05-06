@@ -26,8 +26,6 @@ private extension MemoRow {
             Text(account.memo)
                 .frame(height: 44)
         }
-        
-        
     }
 }
 

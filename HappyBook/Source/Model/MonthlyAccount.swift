@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+struct MonthlyAccount: Hashable {
+    let date: Date
+    let year: String
+    let month: String
+    let incomePrice: String
+    let expensesPrice: String
+    let sumPirce: String
+}

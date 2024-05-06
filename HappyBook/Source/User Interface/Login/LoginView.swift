@@ -27,6 +27,8 @@ struct LoginView: View {
             Spacer()
             
             KakaoSignInButton()
+            
+            Spacer()
         }
     }
 }

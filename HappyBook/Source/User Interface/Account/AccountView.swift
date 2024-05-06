@@ -9,7 +9,6 @@ import SwiftUI
 
 enum TabMenu : String, CaseIterable {
     case day = "일일"
-    case calendar = "달력"
     case month = "월별"
     case memo = "메모"
 }
@@ -32,10 +31,8 @@ struct AccountView: View {
                     
                     if (selectedPicker == .day) {
                         accountList
-                    } else if (selectedPicker == .calendar) {
-                        Text("2")
                     } else if (selectedPicker == .month) {
-                        Text("3")
+                        MonthlyView()
                     } else if (selectedPicker == .memo) {
                         MemoView()
                     }
@@ -58,8 +55,8 @@ private extension AccountView {
     var leadingItems: some View {
         HStack(spacing:3) {
             Button(action: { 
-                store.currentDate = store.currentDate.previousMonth
-                store.updateDailySummaries()
+                store.currentDate = selectedPicker == .month ? store.currentDate.previousYear : store.currentDate.previousMonth
+                selectedPicker == .month ? store.updateMonthlySummaries() : store.updateDailySummaries()
                 store.loadAccountTabData(date: store.currentDate)
             }) {
                 Text("<")
@@ -68,12 +65,12 @@ private extension AccountView {
                 
             }
             
-            Text(store.currentDate.formattedYearAndMonth())
+            Text(selectedPicker == .month ? store.currentDate.formattedYear() : store.currentDate.formattedYearAndMonth())
                 .font(.headline)
             
             Button(action: { 
-                store.currentDate = store.currentDate.nextMonth
-                store.updateDailySummaries()
+                store.currentDate = selectedPicker == .month ? store.currentDate.nextYear : store.currentDate.nextMonth
+                selectedPicker == .month ? store.updateMonthlySummaries() : store.updateDailySummaries()
                 store.loadAccountTabData(date: store.currentDate)
             }) {
                 Text(">")

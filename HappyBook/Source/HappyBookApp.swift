@@ -20,7 +20,7 @@ struct HappyBookApp: App {
     var body: some Scene {
         WindowGroup {
             if (AuthApi.hasToken()) {
-                MainTabView()
+                AccountView()
                     .environmentObject(Store())
             } else {
                 LoginView()
